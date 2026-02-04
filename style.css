@@ -92,11 +92,10 @@ body {
   gap: 30px;
 }
 
-.card {
-  background: #2b2f6d;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
+.card img {
+  width: 130px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
 }
 
 .card h3 {
@@ -149,4 +148,5 @@ body {
   .menu {
     display: none;
   }
+
 }
