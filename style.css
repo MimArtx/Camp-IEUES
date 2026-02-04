@@ -131,6 +131,14 @@ body {
     width: 100%;
     padding: 10px;
   }
+  .card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+  
 }
 
 /* GALLERY */
