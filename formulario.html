@@ -1,0 +1,46 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrição - Acampadentro</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="form-page">
+
+  <div class="form-container">
+    <h1>Inscrição <span>Acampadentro</span></h1>
+    <p>Preencha os dados abaixo para confirmar sua presença.</p>
+
+    <form onsubmit="enviarWhatsApp(event)">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="number" id="idade" placeholder="Idade" required>
+      <input type="tel" id="telefone" placeholder="Telefone" required>
+
+      <button type="submit">Confirmar Presença</button>
+    </form>
+  </div>
+
+<script>
+function enviarWhatsApp(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById('nome').value;
+  const idade = document.getElementById('idade').value;
+  const telefone = document.getElementById('telefone').value;
+
+  const mensagem = 
+    Olá! 🙌 Estou confirmando minha presença no *Acampadentro*.\n\n +
+    👤 Nome: ${nome}\n +
+    🎂 Idade: ${idade}\n +
+    📞 Telefone: ${telefone};
+
+  const numeroWhatsApp = '5512981151894';
+
+  const url = https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)};
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
