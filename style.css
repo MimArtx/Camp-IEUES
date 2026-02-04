@@ -13,8 +13,11 @@ body {
 /* HERO */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1c235a, #0b0f2f);
+  background:
+    linear-gradient(180deg, rgba(10,14,40,0.6), rgba(10,14,40,0.95)),
+    url("principal.jpg") center/cover no-repeat;
   padding: 40px 60px;
+  position: relative;
 }
 
 .navbar {
@@ -41,13 +44,14 @@ body {
 }
 
 .hero-content {
-  max-width: 500px;
-  margin-top: 120px;
+  max-width: 520px;
+  margin-top: 160px;
 }
 
 .hero-content h1 {
   font-size: 96px;
-  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -2px;
 }
 
 .hero-content h1 span {
@@ -71,12 +75,20 @@ body {
 
 /* ACTIVITIES */
 .activities {
-  padding: 70px 20px;
+  padding: 120px 20px;
+  background: #0b0f2f;
 }
 
 .activities h2 {
-  font-size: 40px;
+  font-size: 42px;
   line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  max-width: 520px;
+  font-size: 14px;
+  opacity: 0.75;
 }
 
 .subtitle {
@@ -97,48 +109,48 @@ body {
     margin: 15px auto 30px;
   }
 
-  .cards {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 20px;
-  }
-
+ .cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 60px;
+}
   .cards::-webkit-scrollbar {
     display: none;
   }
 
   .card {
-    min-width: 260px;
-    scroll-snap-align: center;
-    padding: 30px 20px;
-  }
-
-  .card img {
-    width: 110px;
-  }
-
-  .card h3 {
-    font-size: 18px;
-  }
-
-  .card p {
-    font-size: 13px;
-  }
-
-  .card button {
-    width: 100%;
-    padding: 10px;
-  }
-  .card {
-  transition: transform 0.3s ease;
+  background: #3a3fa0;
+  border-radius: 22px;
+  padding: 30px 20px;
+  width: 260px;
+  text-align: center;
+  position: relative;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #ff7a18;
+  border-radius: 0 0 22px 22px;
 }
-  
+
+.card img {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  opacity: 0.85;
 }
 
 /* GALLERY */
