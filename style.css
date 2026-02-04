@@ -1,4 +1,4 @@
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,14 +10,13 @@ body {
   color: #fff;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   min-height: 100vh;
   background:
     linear-gradient(180deg, rgba(10,14,40,0.6), rgba(10,14,40,0.95)),
     url("principal.jpg") center/cover no-repeat;
   padding: 40px 60px;
-  position: relative;
 }
 
 .navbar {
@@ -73,7 +72,7 @@ body {
   cursor: pointer;
 }
 
-/* ACTIVITIES */
+/* ================= ACTIVITIES ================= */
 .activities {
   padding: 120px 20px;
   background: #0b0f2f;
@@ -89,42 +88,27 @@ body {
   max-width: 520px;
   font-size: 14px;
   opacity: 0.75;
+  margin-bottom: 60px;
 }
 
-.subtitle {
-  max-width: 500px;
-  font-size: 14px;
-  margin: 20px 0 60px;
-  opacity: 0.8;
-}
-@media (max-width: 768px) {
-  .activities h2 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  .subtitle {
-    text-align: center;
-    font-size: 14px;
-    margin: 15px auto 30px;
-  }
-
- .cards {
+.cards {
   display: flex;
   gap: 30px;
   margin-top: 60px;
 }
-  .cards::-webkit-scrollbar {
-    display: none;
-  }
 
-  .card {
+.card {
   background: #3a3fa0;
   border-radius: 22px;
   padding: 30px 20px;
   width: 260px;
   text-align: center;
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 .card::after {
@@ -153,10 +137,10 @@ body {
   opacity: 0.85;
 }
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 .gallery {
-  padding: 80px 60px;
-  background: #0a0e2a;
+  padding: 120px 60px;
+  background: linear-gradient(180deg, #0b0f2f, #070a1f);
 }
 
 .gallery h2 {
@@ -171,21 +155,7 @@ body {
   opacity: 0.8;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(10,14,40,0.75), rgba(10,14,40,0.9)),
-    url("principal.jpg") center/cover no-repeat;
-  padding: 40px 60px;
-}
-  .menu {
-    display: none;
-  }
-
-}
-
+/* ================= FORM ================= */
 .form-page {
   min-height: 100vh;
   background:
@@ -196,19 +166,18 @@ body {
   justify-content: center;
   padding: 20px;
 }
+
 .form-container {
-  background: #2b2f6d;
+  background: rgba(43, 47, 109, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   padding: 40px 30px;
   border-radius: 25px;
   max-width: 380px;
   width: 100%;
   text-align: center;
 }
-.form-container {
-  background: rgba(43, 47, 109, 0.95);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
+
 .form-container h1 {
   font-size: 26px;
   margin-bottom: 10px;
@@ -253,9 +222,18 @@ body {
   opacity: 0.9;
 }
 
-@media (max-width: 600px) {
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hero {
+    padding: 30px;
+  }
+
   .hero-content {
-    margin-top: 90px;
+    margin-top: 120px;
   }
 
   .hero-content h1 {
@@ -263,6 +241,37 @@ body {
     line-height: 1;
   }
 
+  .activities h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin: 15px auto 30px;
+  }
+
+  .cards {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 30px;
+  }
+
+  .cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    min-width: 260px;
+    scroll-snap-align: center;
+  }
+
+  .gallery {
+    padding: 100px 30px;
+  }
+}
+
+@media (max-width: 600px) {
   .form-container {
     padding: 30px 20px;
   }
