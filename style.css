@@ -290,3 +290,38 @@ body {
     overflow-x: auto;
   }
 }
+/* ===== SWIPE INDICATOR ===== */
+
+.swipe-indicator {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  opacity: 0.7;
+  animation: swipePulse 1.6s infinite;
+}
+
+.swipe-indicator span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.swipe-indicator::after {
+  content: "⇆";
+  font-size: 18px;
+}
+
+@keyframes swipePulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Só aparece no mobile */
+@media (max-width: 768px) {
+  .swipe-indicator {
+    display: flex;
+  }
+}
