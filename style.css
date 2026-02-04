@@ -162,13 +162,12 @@ body {
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero {
-    padding: 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 64px;
-  }
-
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(10,14,40,0.75), rgba(10,14,40,0.9)),
+    url("principal.jpg") center/cover no-repeat;
+  padding: 40px 60px;
+}
   .menu {
     display: none;
   }
@@ -177,13 +176,14 @@ body {
 
 .form-page {
   min-height: 100vh;
-  background: linear-gradient(180deg, #1c235a, #0b0f2f);
+  background:
+    linear-gradient(rgba(12,15,45,0.85), rgba(12,15,45,0.9)),
+    url("fundo.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
-
 .form-container {
   background: #2b2f6d;
   padding: 40px 30px;
@@ -192,7 +192,11 @@ body {
   width: 100%;
   text-align: center;
 }
-
+.form-container {
+  background: rgba(43, 47, 109, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 .form-container h1 {
   font-size: 26px;
   margin-bottom: 10px;
@@ -237,3 +241,17 @@ body {
   opacity: 0.9;
 }
 
+@media (max-width: 600px) {
+  .hero-content {
+    margin-top: 90px;
+  }
+
+  .hero-content h1 {
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+  }
+}
