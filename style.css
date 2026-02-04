@@ -16,25 +16,13 @@ body {
 /* ================= ANIMAÇÕES ================= */
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 /* ================= HERO ================= */
@@ -119,7 +107,6 @@ body {
   padding: 120px 20px;
   background: #0b0f2f;
   overflow: hidden;
-  perspective: 1200px;
 }
 
 .activities h2 {
@@ -138,67 +125,49 @@ body {
   margin-bottom: 50px;
 }
 
-/* ===== CARROSSEL ===== */
+/* ================= CARROSSEL PREMIUM ================= */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
 .cards {
   display: flex;
   gap: 30px;
-  width: max-content;
-  animation: vitrine 26s linear infinite;
+  will-change: transform;
 }
 
-@keyframes vitrine {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.cards:hover {
-  animation-play-state: paused;
-}
-
-/* ===== CARD ===== */
+/* ================= CARD ================= */
 
 .card {
+  width: 260px;
   background: #3a3fa0;
   border-radius: 22px;
   padding: 30px 20px;
-  width: 260px;
+  flex-shrink: 0;
   text-align: center;
   position: relative;
-  flex-shrink: 0;
 
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
+  filter: blur(2px);
+  opacity: 0.45;
+  transform: scale(0.88);
 
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    filter 0.4s ease,
-    opacity 0.4s ease;
+    transform 0.45s ease,
+    filter 0.45s ease,
+    opacity 0.45s ease,
+    box-shadow 0.45s ease;
+
+  animation: fadeUp 0.8s ease forwards;
 }
 
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
-.card:nth-child(4) { animation-delay: 0.8s; }
-.card:nth-child(5) { animation-delay: 1s; }
-.card:nth-child(6) { animation-delay: 1.2s; }
-
-/* efeito vitrine */
-.cards .card {
-  filter: blur(1.4px);
-  opacity: 0.55;
-}
-
-.card:hover {
+.card.active {
   filter: blur(0);
   opacity: 1;
-  transform: scale(1.08) rotateZ(1deg);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.45);
+  transform: scale(1.1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
   z-index: 2;
 }
 
@@ -235,11 +204,9 @@ body {
 .swipe-indicator {
   display: none;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
   margin-top: 25px;
   opacity: 0.7;
-  animation: swipePulse 1.6s infinite;
+  animation: pulse 1.6s infinite;
 }
 
 .swipe-indicator span {
@@ -251,9 +218,10 @@ body {
 .swipe-indicator::after {
   content: "⇆";
   font-size: 18px;
+  margin-left: 6px;
 }
 
-@keyframes swipePulse {
+@keyframes pulse {
   0% { opacity: 0.3; }
   50% { opacity: 1; }
   100% { opacity: 0.3; }
@@ -290,10 +258,6 @@ body {
 
   .hero-content h1 {
     font-size: 56px;
-  }
-
-  .cards {
-    animation-duration: 36s;
   }
 
   .card {
