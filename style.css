@@ -45,7 +45,6 @@ body {
     linear-gradient(180deg, rgba(10,14,40,0.6), rgba(10,14,40,0.95)),
     url("principal.jpg") center/cover no-repeat;
   padding: 40px 60px;
-  position: relative;
 }
 
 .navbar {
@@ -119,12 +118,13 @@ body {
 .activities {
   padding: 120px 20px;
   background: #0b0f2f;
+  overflow: hidden;
+  perspective: 1200px;
 }
 
 .activities h2 {
   font-family: 'Anton', sans-serif;
   font-size: 42px;
-  line-height: 1.1;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -135,39 +135,33 @@ body {
   font-size: 14px;
   line-height: 1.6;
   opacity: 0.75;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
+
+/* ===== CARROSSEL ===== */
 
 .cards {
   display: flex;
   gap: 30px;
-  margin-top: 60px;
-  animation: vitrine 22s linear infinite;
   width: max-content;
+  animation: vitrine 26s linear infinite;
 }
 
 @keyframes vitrine {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
+
 .cards:hover {
   animation-play-state: paused;
 }
-.card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
 
-.card:hover {
-  transform: scale(1.05) rotateZ(1deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-.activities {
-  perspective: 1200px;
-}
+/* ===== CARD ===== */
+
 .card {
   background: #3a3fa0;
   border-radius: 22px;
@@ -175,8 +169,16 @@ body {
   width: 260px;
   text-align: center;
   position: relative;
+  flex-shrink: 0;
+
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    filter 0.4s ease,
+    opacity 0.4s ease;
 }
 
 .card:nth-child(1) { animation-delay: 0.2s; }
@@ -185,6 +187,20 @@ body {
 .card:nth-child(4) { animation-delay: 0.8s; }
 .card:nth-child(5) { animation-delay: 1s; }
 .card:nth-child(6) { animation-delay: 1.2s; }
+
+/* efeito vitrine */
+.cards .card {
+  filter: blur(1.4px);
+  opacity: 0.55;
+}
+
+.card:hover {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.08) rotateZ(1deg);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.45);
+  z-index: 2;
+}
 
 .card::after {
   content: "";
@@ -205,7 +221,6 @@ body {
 .card h3 {
   font-weight: 600;
   font-size: 20px;
-  letter-spacing: 0.5px;
   margin-bottom: 10px;
 }
 
@@ -213,6 +228,35 @@ body {
   font-size: 13px;
   line-height: 1.5;
   opacity: 0.85;
+}
+
+/* ================= SWIPE INDICATOR ================= */
+
+.swipe-indicator {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  opacity: 0.7;
+  animation: swipePulse 1.6s infinite;
+}
+
+.swipe-indicator span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.swipe-indicator::after {
+  content: "⇆";
+  font-size: 18px;
+}
+
+@keyframes swipePulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
 }
 
 /* ================= GALLERY ================= */
@@ -237,69 +281,6 @@ body {
   opacity: 0.8;
 }
 
-/* ================= FORM ================= */
-
-.form-page {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(12,15,45,0.85), rgba(12,15,45,0.9)),
-    url("fundo.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.form-container {
-  background: rgba(43, 47, 109, 0.95);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  padding: 40px 30px;
-  border-radius: 25px;
-  max-width: 380px;
-  width: 100%;
-  text-align: center;
-  animation: fadeUp 0.9s ease forwards;
-}
-
-.form-container h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 26px;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-}
-
-.form-container h1 span {
-  color: #ff7a18;
-}
-
-.form-container p {
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.8;
-  margin-bottom: 25px;
-}
-
-.form-container input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: none;
-  margin-bottom: 15px;
-  font-size: 14px;
-}
-
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  background: #ff7a18;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
 /* ================= RESPONSIVO ================= */
 
 @media (max-width: 768px) {
@@ -312,40 +293,13 @@ body {
   }
 
   .cards {
-    overflow-x: auto;
+    animation-duration: 36s;
   }
-}
-/* ===== SWIPE INDICATOR ===== */
 
-.swipe-indicator {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  opacity: 0.7;
-  animation: swipePulse 1.6s infinite;
-}
+  .card {
+    width: 240px;
+  }
 
-.swipe-indicator span {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.swipe-indicator::after {
-  content: "⇆";
-  font-size: 18px;
-}
-
-@keyframes swipePulse {
-  0% { opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-
-/* Só aparece no mobile */
-@media (max-width: 768px) {
   .swipe-indicator {
     display: flex;
   }
