@@ -1,285 +1,331 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CAMP IEUES Adventure</title>
 
-<link rel="stylesheet" href="style.css">
+<title>Acampadentro IEUES</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Swiper -->
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(135deg,#070b22,#111a4b);
+}
+
+.hero h1{
+font-family:'Anton';
+font-size:64px;
+letter-spacing:2px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+opacity:.85;
+}
+
+.btn{
+margin-top:30px;
+padding:14px 32px;
+border-radius:40px;
+border:none;
+background:linear-gradient(45deg,#ff7a18,#ffb347);
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section{
+padding:110px 20px;
+text-align:center;
+}
+
+.title{
+font-family:'Anton';
+font-size:44px;
+margin-bottom:60px;
+}
+
+/* SWIPER */
+
+.swiper{
+max-width:1200px;
+padding-bottom:60px;
+}
+
+.swiper-slide{
+
+background:#1b215a;
+border-radius:24px;
+padding:20px;
+transition:.4s;
+opacity:.55;
+transform:scale(.85);
+
+}
+
+.swiper-slide-active{
+opacity:1;
+transform:scale(1);
+background:#2b2f77;
+}
+
+.slide-img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+color:#fff;
+}
+
+.swiper-pagination-bullet{
+background:#fff;
+opacity:.6;
+}
+
+.swiper-pagination-bullet-active{
+opacity:1;
+background:#ff7a18;
+}
+
+/* GLASS CARD EXTRA */
+
+.card{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:26px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+opacity:.7;
+font-size:14px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.title{
+font-size:34px;
+}
+
+}
+
+</style>
+
 </head>
-
 <body>
 
-<!-- ================= HERO ================= -->
-<div class="particles"></div>
 
-<header class="hero">
+<!-- HERO -->
 
-<nav class="navbar">
-  <h2 class="logo">CAMP IEUES</h2>
-</nav>
+<section class="hero">
 
-<div class="hero-content">
+<h1>Acampadentro</h1>
 
-  <h1><span>*</span>ACAMPA</h1>
-  <h1>DENTRO <span>*</span></h1>
+<p>Um tempo separado para viver a presença de Deus 🔥</p>
 
-  <p>
-    Um tempo separado para comunhão, fé e alegria na presença de Deus.
-  </p>
+<button class="btn">
+Quero participar
+</button>
 
-  <!-- COUNTDOWN -->
-  <div class="countdown">
+</section>
 
-    <div class="time-box">
-      <span id="days">00</span>
-      <p>Dias</p>
-    </div>
 
-    <div class="time-box">
-      <span id="hours">00</span>
-      <p>Horas</p>
-    </div>
 
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <p>Min</p>
-    </div>
+<!-- ATIVIDADES -->
 
-    <div class="time-box">
-      <span id="seconds">00</span>
-      <p>Seg</p>
-    </div>
+<section class="section">
 
-  </div>
-
-  <button class="btn-participar"
-  onclick="location.href='formulario.html'">
-  Participar
-  </button>
-
-</div>
-</header>
-
-<!-- ================= ATIVIDADES ================= -->
-
-    <section class="carousel-section">
-
-<h2 class="carousel-title">
+<h2 class="title">
 Atividades do Acampadentro
 </h2>
 
-<div class="carousel">
+<div class="swiper">
 
-  <button class="nav prev">&#10094;</button>
+<div class="swiper-wrapper">
 
-  <div class="carousel-track" id="carouselTrack">
+<!-- SLIDE -->
 
-    <div class="slide">
-      <img src="um.jpg">
-      <h3>Oração 🙏</h3>
-      <p>Tempo separado para buscar a presença de Deus.</p>
-    </div>
+<div class="swiper-slide">
+<img src="um.jpg" class="slide-img">
+<h3>Oração 🙏</h3>
+<p>Tempo separado para buscar a presença de Deus.</p>
+</div>
 
-    <div class="slide">
-      <img src="dois.jpg">
-      <h3>Devocional ☕</h3>
-      <p>Palavra e comunhão.</p>
-    </div>
+<div class="swiper-slide">
+<img src="dois.jpg" class="slide-img">
+<h3>Devocional ☕</h3>
+<p>Palavra e comunhão.</p>
+</div>
 
-    <div class="slide">
-      <img src="tres.jpg">
-      <h3>Pipoca 🍿</h3>
-      <p>Filme e reflexão.</p>
-    </div>
+<div class="swiper-slide">
+<img src="tres.jpg" class="slide-img">
+<h3>Pipoca 🍿</h3>
+<p>Filme e reflexão.</p>
+</div>
 
-    <div class="slide">
-      <img src="quatro.jpg">
-      <h3>Gincana 🎯</h3>
-      <p>Desafios em equipe.</p>
-    </div>
+<div class="swiper-slide">
+<img src="quatro.jpg" class="slide-img">
+<h3>Gincana 🎯</h3>
+<p>Desafios em equipe.</p>
+</div>
 
-    <div class="slide">
-      <img src="cinco.jpg">
-      <h3>Louvor 🎶</h3>
-      <p>Adoração ao Senhor.</p>
-    </div>
+<div class="swiper-slide">
+<img src="cinco.jpg" class="slide-img">
+<h3>Louvor 🎶</h3>
+<p>Adoração ao Senhor.</p>
+</div>
 
-    <div class="slide">
-      <img src="seis.jpg">
-      <h3>Roda de conversa 🗣️</h3>
-      <p>Compartilhar e edificar.</p>
-    </div>
+<div class="swiper-slide">
+<img src="seis.jpg" class="slide-img">
+<h3>Roda de conversa 🗣️</h3>
+<p>Compartilhar e edificar.</p>
+</div>
 
-  </div>
+</div>
 
-  <button class="nav next">&#10095;</button>
+<!-- BOTÕES -->
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+
+<!-- PAGINAÇÃO -->
+<div class="swiper-pagination"></div>
 
 </div>
 
 </section>
 
-   
 
 
-<!-- ================= O QUE LEVAR ================= -->
-<section class="levar" id="levar">
+<!-- INFO EXTRA -->
 
-<h2>O que levar</h2>
+<section class="section">
 
-<div class="levar-grid">
+<div class="card">
 
-  <div class="levar-item">
-    <div class="icon">📖</div>
-    <p>Bíblia</p>
-  </div>
+<h2 class="title">Prepare-se!</h2>
 
-  <div class="levar-item">
-    <div class="icon">🧥</div>
-    <p>Agasalho</p>
-  </div>
-
-  <div class="levar-item">
-    <div class="icon">🪥</div>
-    <p>Higiene pessoal</p>
-  </div>
-
-  <div class="levar-item">
-    <div class="icon">💧</div>
-    <p>Garrafa d’água</p>
-  </div>
-
-  <div class="levar-item">
-    <div class="icon">🛏️</div>
-    <p>Roupa de cama</p>
-  </div>
-
-  <div class="levar-item">
-    <div class="icon">🩴</div>
-    <p>Chinelo</p>
-  </div>
+<p>
+Serão momentos de crescimento espiritual, comunhão e muita alegria.
+Venha com o coração aberto para aquilo que Deus irá fazer ❤️
+</p>
 
 </div>
 
 </section>
 
-<!-- ================= COUNTDOWN ================= -->
-<script>
-const eventDate =
-new Date("2026-03-15T19:00:00").getTime();
 
-function updateCountdown(){
 
-const now = new Date().getTime();
-const diff = eventDate - now;
+<footer>
+© 2026 - Igreja IEUES • Todos os direitos reservados
+</footer>
 
-const days =
-Math.floor(diff/(1000*60*60*24));
 
-const hours =
-Math.floor((diff/(1000*60*60))%24);
 
-const minutes =
-Math.floor((diff/1000/60)%60);
+<!-- SWIPER SCRIPT -->
 
-const seconds =
-Math.floor((diff/1000)%60);
-
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
-}
-
-setInterval(updateCountdown,1000);
-updateCountdown();
-</script>
-
-<!-- ================= PARTICLES ================= -->
-<script>
-const particlesContainer =
-document.querySelector(".particles");
-
-for(let i=0;i<40;i++){
-
-const particle =
-document.createElement("span");
-
-const size = Math.random()*6+2;
-const posX = Math.random()*100;
-const duration = Math.random()*20+10;
-const delay = Math.random()*5;
-
-particle.style.width = size+"px";
-particle.style.height = size+"px";
-particle.style.left = posX+"%";
-particle.style.animationDuration =
-duration+"s";
-particle.style.animationDelay =
-delay+"s";
-
-particlesContainer.appendChild(particle);
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 
-const track = document.getElementById("carouselTrack");
-const slides = document.querySelectorAll(".slide");
+const swiper = new Swiper('.swiper', {
 
-// CLONAR slides para loop
-slides.forEach(slide=>{
-  const clone = slide.cloneNode(true);
-  track.appendChild(clone);
-});
+loop:true,
+centeredSlides:true,
 
-let index = 0;
-const slideWidth = 310; // largura + gap
+autoplay:{
+delay:3500,
+disableOnInteraction:false,
+},
 
-function moveCarousel(){
-  index++;
-  track.style.transform = `translateX(-${index * slideWidth}px)`;
+grabCursor:true,
 
-  // reset invisível
-  if(index >= slides.length){
-    setTimeout(()=>{
-      track.style.transition="none";
-      index = 0;
-      track.style.transform="translateX(0)";
-    },500);
+slidesPerView:1.2,
+spaceBetween:20,
 
-    setTimeout(()=>{
-      track.style.transition=".5s ease";
-    },600);
-  }
+breakpoints:{
+
+768:{
+slidesPerView:2.2,
+},
+
+1024:{
+slidesPerView:3,
 }
 
-// autoplay
-let auto = setInterval(moveCarousel,3000);
+},
 
-// pausa ao passar mouse
-track.addEventListener("mouseenter",()=>{
-  clearInterval(auto);
+pagination:{
+el:'.swiper-pagination',
+clickable:true,
+},
+
+navigation:{
+nextEl:'.swiper-button-next',
+prevEl:'.swiper-button-prev',
+},
+
 });
-
-track.addEventListener("mouseleave",()=>{
-  auto = setInterval(moveCarousel,3000);
-});
-
-// botões
-document.querySelector(".next").onclick = moveCarousel;
-
-document.querySelector(".prev").onclick = ()=>{
-  if(index>0){
-    index--;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
-};
 
 </script>
-
 
 </body>
 </html>
