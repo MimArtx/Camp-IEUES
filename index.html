@@ -1,77 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IEUES</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonte mais forte para títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <header class="hero">
+<!-- ================= HERO ================= -->
 
-    <nav class="navbar">
-      <h2 class="logo">IEUES</h2>
+<header class="hero">
 
-      <ul class="menu">
-        <li>Localização</li>
-        <li>Data e Horário</li>
-        <li>Lista</li>
-        <li>Inscrição</li>
-        <li class="login">Login</li>
-      </ul>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2 class="logo">IEUES</h2>
 
-    <div class="hero-content">
-      <h1><span>*</span>ACAMPA</h1>
-      <h1>DENTRO<span>*</span></h1>
+    <ul class="menu">
+      <li>Localização</li>
+      <li>Data e Horário</li>
+      <li>Lista</li>
+      <li>Inscrição</li>
+      <li class="login">Login</li>
+    </ul>
+  </nav>
 
-      <p></p>
+  <!-- TEXTO CENTRAL -->
+  <div class="hero-content">
 
-      <button>Adventure</button>
+    <h1>
+      <span>*</span>ACAMPA<br>
+      DENTRO<span>*</span>
+    </h1>
+
+    <p>
+      Um tempo separado para comunhão, fé e alegria na presença de Deus.
+    </p>
+
+    <button class="btn">Participar</button>
+
+  </div>
+
+</header>
+
+
+<!-- ================= ATIVIDADES ================= -->
+
+<section class="section">
+
+  <h2 class="title">
+    Atividades do Acampadentro
+  </h2>
+
+  <!-- SWIPER -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- CARD -->
+      <div class="swiper-slide">
+        <img src="um.jpg" class="slide-img">
+        <h3>Oração 🙏</h3>
+        <p>Tempo separado para buscar a presença de Deus.</p>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="dois.jpg" class="slide-img">
+        <h3>Devocional com Café ☕</h3>
+        <p>Palavra e comunhão.</p>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="tres.jpg" class="slide-img">
+        <h3>Sessão Pipoca 🍿</h3>
+        <p>Filme e reflexão.</p>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="quatro.jpg" class="slide-img">
+        <h3>Gincana 🎯</h3>
+        <p>Desafios em equipe.</p>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="cinco.jpg" class="slide-img">
+        <h3>Louvor 🎶</h3>
+        <p>Adoração ao Senhor.</p>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="seis.jpg" class="slide-img">
+        <h3>Roda de conversa 🗣️</h3>
+        <p>Compartilhar e edificar.</p>
+      </div>
+
     </div>
 
-  </header>
+    <!-- setas -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- bolinhas -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+</section>
 
 
-  <section class="activities">
-    <h2>ATIVIDADES</h2>
 
-    <p class="subtitle"></p>
+<!-- ================= O QUE LEVAR ================= -->
 
-    <div class="cards">
+<section class="section">
 
-      <div class="card">
-        <h3>Oração</h3>
-        <p>.</p>
-        <button></button>
-      </div>
+  <h2 class="title">O que levar?</h2>
 
-      <div class="card">
-        <h3>Devocional com Café</h3>
-        <p></p>
-        <button></button>
-      </div>
+  <div class="card">
+    <p>
+      Bíblia • Agasalho • Higiene pessoal • Garrafa d’água • Roupa de cama • Chinelo
+    </p>
+  </div>
 
-      <div class="card">
-        <h3>Gincana</h3>
-        <p>.</p>
-        <button></button>
-      </div>
-
-    </div>
-  </section>
+</section>
 
 
-  <section class="gallery">
-    <h2>O que levar ?</h2>
-    <p></p>
-  </section>
+<footer>
+  © 2026 IEUES — Todos os direitos reservados
+</footer>
+
+
+
+<!-- SWIPER CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+<!-- LOOP ATIVO -->
+<script>
+new Swiper(".mySwiper", {
+
+  loop:true,
+  centeredSlides:true,
+
+  slidesPerView:1.2,
+  spaceBetween:20,
+
+  autoplay:{
+    delay:3500,
+    disableOnInteraction:false,
+  },
+
+  pagination:{
+    el:".swiper-pagination",
+    clickable:true,
+  },
+
+  navigation:{
+    nextEl:".swiper-button-next",
+    prevEl:".swiper-button-prev",
+  },
+
+  breakpoints:{
+    700:{
+      slidesPerView:2.2
+    },
+    1024:{
+      slidesPerView:3
+    }
+  }
+
+});
+</script>
 
 </body>
 </html>
