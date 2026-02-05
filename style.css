@@ -19,12 +19,12 @@ body {
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeLeft {
   from { opacity: 0; transform: translateX(-40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes pulse {
@@ -33,19 +33,13 @@ body {
   100% { opacity: 0.3; }
 }
 
-@keyframes bgMove {
-  from { background-position: center top; }
-  to { background-position: center bottom; }
-}
-
-@keyframes formEnter {
+/* 🔁 LOOP DO CARROSSEL */
+@keyframes carouselLoop {
   from {
-    opacity: 0;
-    transform: scale(0.92);
+    transform: translateX(0);
   }
   to {
-    opacity: 1;
-    transform: scale(1);
+    transform: translateX(-50%);
   }
 }
 
@@ -57,32 +51,6 @@ body {
     linear-gradient(180deg, rgba(10,14,40,0.6), rgba(10,14,40,0.95)),
     url("principal.jpg") center/cover no-repeat;
   padding: 40px 60px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.login {
-  border: 1px solid #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
 }
 
 .hero-content {
@@ -103,28 +71,6 @@ body {
   color: #ff7a18;
 }
 
-.hero-content p {
-  margin: 22px 0;
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.85;
-}
-
-.hero-content button {
-  background: #ff7a18;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hero-content button:hover {
-  transform: translateY(-3px);
-  opacity: 0.9;
-}
-
 /* ================= ATIVIDADES ================= */
 
 .activities {
@@ -136,33 +82,17 @@ body {
 .activities-title {
   font-family: 'Anton', sans-serif;
   font-size: 44px;
-  line-height: 1.1;
   letter-spacing: 2px;
-  text-transform: uppercase;
   margin-bottom: 18px;
-  animation: fadeUp 0.9s ease forwards;
 }
 
 .activities-title span {
   color: #ff7a18;
-  position: relative;
-}
-
-.activities-title span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 60%;
-  height: 4px;
-  background: #ff7a18;
-  border-radius: 10px;
 }
 
 .subtitle {
   max-width: 520px;
   font-size: 14px;
-  line-height: 1.6;
   opacity: 0.75;
   margin-bottom: 50px;
 }
@@ -172,13 +102,21 @@ body {
 .carousel {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
+/* AQUI ESTÁ O LOOP */
 .cards {
   display: flex;
   gap: 30px;
-  will-change: transform;
-  perspective: 1200px;
+  width: max-content;
+  animation: carouselLoop 28s linear infinite;
+}
+
+/* Pausa ao tocar ou passar o mouse */
+.carousel:hover .cards,
+.carousel:active .cards {
+  animation-play-state: paused;
 }
 
 /* ================= CARD ================= */
@@ -192,22 +130,14 @@ body {
   text-align: center;
   position: relative;
 
-  filter: blur(2px);
-  opacity: 0.45;
-  transform: scale(0.88);
-
-  transition: transform 0.6s ease,
-              filter 0.6s ease,
-              opacity 0.6s ease,
-              box-shadow 0.6s ease;
-
-  animation: fadeUp 0.8s ease forwards;
+  opacity: 0.7;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
 }
 
-.card.active {
-  filter: blur(0);
+.card:hover {
   opacity: 1;
-  transform: scale(1.12) translateY(-10px);
+  transform: scale(1.08) translateY(-10px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.45);
   z-index: 2;
 }
@@ -226,22 +156,15 @@ body {
 .card img {
   width: 140px;
   margin-bottom: 20px;
-  transition: transform 0.6s ease;
-}
-
-.card.active img {
-  transform: scale(1.08);
 }
 
 .card h3 {
-  font-weight: 600;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .card p {
   font-size: 13px;
-  line-height: 1.5;
   opacity: 0.85;
 }
 
@@ -251,134 +174,31 @@ body {
   display: none;
   justify-content: center;
   margin-top: 25px;
-  opacity: 0.7;
   animation: pulse 1.6s infinite;
 }
 
-.swipe-indicator span {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.swipe-indicator::after {
-  content: "⇆";
-  font-size: 18px;
-  margin-left: 6px;
-}
-
-/* ================= FORMULÁRIO ================= */
+/* ================= FORM ================= */
 
 .form-bg {
   min-height: 100vh;
   background: url("fundo.jpg") center/cover no-repeat;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: bgMove 20s ease-in-out infinite alternate;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(11,15,47,0.65),
-    rgba(11,15,47,0.95)
-  );
 }
 
 .form-container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
   max-width: 420px;
   background: rgba(58,63,160,0.18);
   backdrop-filter: blur(10px);
   border-radius: 26px;
   padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-  animation: formEnter 0.9s ease forwards;
-}
-
-.form-container h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: 42px;
-  letter-spacing: 2px;
-}
-
-.form-container h1 span {
-  color: #ff7a18;
-}
-
-.form-container p {
-  font-size: 14px;
-  opacity: 0.85;
-  margin: 18px 0 30px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.row {
-  display: flex;
-  gap: 10px;
-}
-
-.row input {
-  flex: 1;
-}
-
-input {
-  padding: 14px 18px;
-  border-radius: 18px;
-  border: none;
-  font-size: 14px;
-  outline: none;
-}
-
-button {
-  background: #ff7a18;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 22px;
-  cursor: pointer;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255,122,24,0.5);
 }
 
 /* ================= RESPONSIVO ================= */
 
 @media (max-width: 768px) {
-  .menu { display: none; }
   .hero-content h1 { font-size: 56px; }
-  .card { width: 240px; }
+  .card { width: 230px; }
   .swipe-indicator { display: flex; }
-}
-
-@media (max-width: 480px) {
-  .activities-title { font-size: 34px; }
-  .subtitle { font-size: 13px; }
-
-  .row { flex-direction: column; }
-
-  .form-container {
-    margin: 0 16px;
-    padding: 34px 24px;
-  }
-
-  .form-container h1 {
-    font-size: 34px;
-  }
 }
