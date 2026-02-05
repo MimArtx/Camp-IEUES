@@ -238,6 +238,20 @@ body {
   justify-content: center;
 }
 
+.form-bg {
+  animation: bgMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  from {
+    background-position: center top;
+  }
+  to {
+    background-position: center bottom;
+  }
+}
+
+
 .overlay {
   position: absolute;
   inset: 0;
