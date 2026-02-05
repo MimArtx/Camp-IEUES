@@ -267,5 +267,62 @@ particlesContainer.appendChild(particle);
 }
 </script>
 
+<script>
+
+const track = document.getElementById("carouselTrack");
+const slides = document.querySelectorAll(".slide");
+
+// CLONAR slides para loop
+slides.forEach(slide=>{
+  const clone = slide.cloneNode(true);
+  track.appendChild(clone);
+});
+
+let index = 0;
+const slideWidth = 310; // largura + gap
+
+function moveCarousel(){
+  index++;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+  // reset invisível
+  if(index >= slides.length){
+    setTimeout(()=>{
+      track.style.transition="none";
+      index = 0;
+      track.style.transform="translateX(0)";
+    },500);
+
+    setTimeout(()=>{
+      track.style.transition=".5s ease";
+    },600);
+  }
+}
+
+// autoplay
+let auto = setInterval(moveCarousel,3000);
+
+// pausa ao passar mouse
+track.addEventListener("mouseenter",()=>{
+  clearInterval(auto);
+});
+
+track.addEventListener("mouseleave",()=>{
+  auto = setInterval(moveCarousel,3000);
+});
+
+// botões
+document.querySelector(".next").onclick = moveCarousel;
+
+document.querySelector(".prev").onclick = ()=>{
+  if(index>0){
+    index--;
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+};
+
+</script>
+
+
 </body>
 </html>
