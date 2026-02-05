@@ -168,5 +168,20 @@ new Swiper(".mySwiper", {
 });
 </script>
 
+<script>
+
+const bg = document.querySelector('.hero-bg');
+
+window.addEventListener('scroll', () => {
+
+    let scroll = window.scrollY;
+
+    bg.style.transform =
+        `translateY(${scroll * 0.45}px)`;
+
+});
+
+</script>
+
 </body>
 </html>
