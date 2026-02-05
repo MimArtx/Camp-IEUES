@@ -110,7 +110,6 @@ body {
   display: flex;
   gap: 30px;
   width: max-content;
-  animation: carouselLoop 28s linear infinite;
 }
 
 /* Pausa ao tocar ou passar o mouse */
