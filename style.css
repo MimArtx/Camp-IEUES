@@ -21,6 +21,11 @@ color:#fff;
 overflow-x:hidden;
 }
 
+
+.hero{
+align-items:flex-start;
+padding-top:180px;
+}
 .hero{
 position:relative;
 min-height:100vh;
