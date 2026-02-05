@@ -96,9 +96,13 @@ transition:.35s;
 box-shadow:0 10px 25px rgba(255,122,24,.35);
 }
 
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 20px 40px rgba(255,122,24,.7);
+.btn{
+display:inline-block;
+text-decoration:none;
+text-align:center;
+}
+.btn:visited{
+color:#fff;
 }
 
 
