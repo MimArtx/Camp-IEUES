@@ -46,6 +46,20 @@ rgba(5,8,22,.2) 70%
 );
 }
 
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+90deg,
+rgba(5,8,22,.95) 15%,
+rgba(5,8,22,.6) 40%,
+rgba(5,8,22,.2) 70%
+);
+}
+
+
 /* CARD */
 
 .hero-content{
@@ -411,4 +425,17 @@ background:rgba(255,255,255,.15);
 backdrop-filter:blur(10px);
 
 transform:translateY(-2px);
+}
+
+.logo-top{
+position:absolute;
+top:40px;
+right:60px;
+
+font-family:'Anton';
+letter-spacing:3px;
+font-size:26px;
+z-index:3;
+
+opacity:.9;
 }
