@@ -209,3 +209,97 @@ body{
 }
 
 }
+
+/* =========================
+   SEÇÃO O QUE LEVAR
+========================= */
+
+.levar {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg,#0f0c29,#1b1446);
+  color: white;
+}
+
+.levar h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+
+.levar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* CARD */
+
+.item {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 25px 15px;
+  border-radius: 18px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255,140,0,0.4);
+}
+
+/* ÍCONE */
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Animações alternadas */
+
+.item:nth-child(2) .icon { animation: pulse 3s infinite; }
+.item:nth-child(3) .icon { animation: rotate 6s linear infinite; }
+.item:nth-child(4) .icon { animation: float 5s ease-in-out infinite; }
+.item:nth-child(5) .icon { animation: pulse 4s infinite; }
+.item:nth-child(6) .icon { animation: rotate 7s linear infinite; }
+
+/* TEXTO */
+
+.item p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+/* Flutuar */
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Pulsar */
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.15); opacity: .7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Girar */
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
