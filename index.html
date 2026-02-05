@@ -1,196 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Acampadentro IEUES</title>
+<title>CAMP IEUES Adventure</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- Swiper -->
+<!-- SWIPER (carrossel PROFISSIONAL) -->
 <link
 rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
-<style>
-
-/* RESET */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-height:85vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(135deg,#070b22,#111a4b);
-}
-
-.hero h1{
-font-family:'Anton';
-font-size:64px;
-letter-spacing:2px;
-}
-
-.hero p{
-margin-top:15px;
-font-size:20px;
-opacity:.85;
-}
-
-.btn{
-margin-top:30px;
-padding:14px 32px;
-border-radius:40px;
-border:none;
-background:linear-gradient(45deg,#ff7a18,#ffb347);
-color:#fff;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* SECTION */
-
-.section{
-padding:110px 20px;
-text-align:center;
-}
-
-.title{
-font-family:'Anton';
-font-size:44px;
-margin-bottom:60px;
-}
-
-/* SWIPER */
-
-.swiper{
-max-width:1200px;
-padding-bottom:60px;
-}
-
-.swiper-slide{
-
-background:#1b215a;
-border-radius:24px;
-padding:20px;
-transition:.4s;
-opacity:.55;
-transform:scale(.85);
-
-}
-
-.swiper-slide-active{
-opacity:1;
-transform:scale(1);
-background:#2b2f77;
-}
-
-.slide-img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:18px;
-margin-bottom:15px;
-}
-
-.swiper-button-next,
-.swiper-button-prev{
-color:#fff;
-}
-
-.swiper-pagination-bullet{
-background:#fff;
-opacity:.6;
-}
-
-.swiper-pagination-bullet-active{
-opacity:1;
-background:#ff7a18;
-}
-
-/* GLASS CARD EXTRA */
-
-.card{
-max-width:900px;
-margin:auto;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-padding:40px;
-border-radius:26px;
-}
-
-/* FOOTER */
-
-footer{
-padding:40px;
-text-align:center;
-opacity:.7;
-font-size:14px;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:42px;
-}
-
-.title{
-font-size:34px;
-}
-
-}
-
-</style>
-
 </head>
+
 <body>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
-<section class="hero">
+<header class="hero">
 
-<h1>Acampadentro</h1>
+<h1>ACAMPADENTRO</h1>
 
-<p>Um tempo separado para viver a presença de Deus 🔥</p>
+<p>
+Um tempo separado para comunhão, fé e alegria na presença de Deus.
+</p>
 
-<button class="btn">
-Quero participar
+<button class="btn"
+onclick="location.href='formulario.html'">
+Participar
 </button>
 
-</section>
+</header>
 
 
 
-<!-- ATIVIDADES -->
+<!-- ================= CARROSSEL ================= -->
 
 <section class="section">
 
@@ -198,42 +51,47 @@ Quero participar
 Atividades do Acampadentro
 </h2>
 
-<div class="swiper">
+<!-- Swiper -->
+<div class="swiper mySwiper">
 
 <div class="swiper-wrapper">
 
-<!-- SLIDE -->
-
+<!-- Slide 1 -->
 <div class="swiper-slide">
 <img src="um.jpg" class="slide-img">
 <h3>Oração 🙏</h3>
 <p>Tempo separado para buscar a presença de Deus.</p>
 </div>
 
+<!-- Slide 2 -->
 <div class="swiper-slide">
 <img src="dois.jpg" class="slide-img">
 <h3>Devocional ☕</h3>
 <p>Palavra e comunhão.</p>
 </div>
 
+<!-- Slide 3 -->
 <div class="swiper-slide">
 <img src="tres.jpg" class="slide-img">
 <h3>Pipoca 🍿</h3>
 <p>Filme e reflexão.</p>
 </div>
 
+<!-- Slide 4 -->
 <div class="swiper-slide">
 <img src="quatro.jpg" class="slide-img">
 <h3>Gincana 🎯</h3>
 <p>Desafios em equipe.</p>
 </div>
 
+<!-- Slide 5 -->
 <div class="swiper-slide">
 <img src="cinco.jpg" class="slide-img">
 <h3>Louvor 🎶</h3>
 <p>Adoração ao Senhor.</p>
 </div>
 
+<!-- Slide 6 -->
 <div class="swiper-slide">
 <img src="seis.jpg" class="slide-img">
 <h3>Roda de conversa 🗣️</h3>
@@ -242,11 +100,11 @@ Atividades do Acampadentro
 
 </div>
 
-<!-- BOTÕES -->
+<!-- setas -->
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 
-<!-- PAGINAÇÃO -->
+<!-- bolinhas -->
 <div class="swiper-pagination"></div>
 
 </div>
@@ -255,17 +113,22 @@ Atividades do Acampadentro
 
 
 
-<!-- INFO EXTRA -->
+<!-- ================= INFO ================= -->
 
 <section class="section">
 
+<h2 class="title">
+O que esperar?
+</h2>
+
 <div class="card">
 
-<h2 class="title">Prepare-se!</h2>
-
 <p>
-Serão momentos de crescimento espiritual, comunhão e muita alegria.
-Venha com o coração aberto para aquilo que Deus irá fazer ❤️
+Serão dias inesquecíveis de crescimento espiritual,
+amizades e experiências com Deus.
+
+Prepare-se para viver algo novo e fortalecer sua fé
+em um ambiente cheio de alegria e comunhão.
 </p>
 
 </div>
@@ -274,54 +137,65 @@ Venha com o coração aberto para aquilo que Deus irá fazer ❤️
 
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-© 2026 - Igreja IEUES • Todos os direitos reservados
+© 2026 CAMP IEUES — Todos os direitos reservados
 </footer>
 
 
 
-<!-- SWIPER SCRIPT -->
 
+<!-- ================= SCRIPTS ================= -->
+
+<!-- SWIPER -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".mySwiper", {
 
 loop:true,
-centeredSlides:true,
-
-autoplay:{
-delay:3500,
-disableOnInteraction:false,
-},
 
 grabCursor:true,
+
+centeredSlides:true,
 
 slidesPerView:1.2,
 spaceBetween:20,
 
-breakpoints:{
-
-768:{
-slidesPerView:2.2,
+autoplay:{
+delay:2500,
+disableOnInteraction:false,
 },
 
-1024:{
-slidesPerView:3,
-}
-
-},
+speed:800,
 
 pagination:{
-el:'.swiper-pagination',
+el:".swiper-pagination",
 clickable:true,
 },
 
 navigation:{
-nextEl:'.swiper-button-next',
-prevEl:'.swiper-button-prev',
+nextEl:".swiper-button-next",
+prevEl:".swiper-button-prev",
 },
+
+breakpoints:{
+
+640:{
+slidesPerView:1.5,
+},
+
+900:{
+slidesPerView:2.5,
+},
+
+1200:{
+slidesPerView:3,
+}
+
+}
 
 });
 
