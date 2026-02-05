@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap');
 
 /* ================= RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= ANIMAÇÕES GERAIS ================= */
+/* ================= ANIMAÇÕES ================= */
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -30,6 +31,22 @@ body {
   0% { opacity: 0.3; }
   50% { opacity: 1; }
   100% { opacity: 0.3; }
+}
+
+@keyframes bgMove {
+  from { background-position: center top; }
+  to { background-position: center bottom; }
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ================= HERO ================= */
@@ -48,12 +65,24 @@ body {
   align-items: center;
 }
 
+.logo {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 .menu {
   list-style: none;
   display: flex;
   gap: 30px;
   font-size: 13px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login {
+  border: 1px solid #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
 }
 
 .hero-content {
@@ -65,6 +94,7 @@ body {
 .hero-content h1 {
   font-family: 'Anton', sans-serif;
   font-size: 96px;
+  line-height: 0.95;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -73,10 +103,68 @@ body {
   color: #ff7a18;
 }
 
-/* ================= ACTIVITIES ================= */
+.hero-content p {
+  margin: 22px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.hero-content button {
+  background: #ff7a18;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-content button:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* ================= ATIVIDADES ================= */
 
 .activities {
   padding: 120px 20px;
+  background: #0b0f2f;
+  overflow: hidden;
+}
+
+.activities-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.activities-title span {
+  color: #ff7a18;
+  position: relative;
+}
+
+.activities-title span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60%;
+  height: 4px;
+  background: #ff7a18;
+  border-radius: 10px;
+}
+
+.subtitle {
+  max-width: 520px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 50px;
 }
 
 /* ================= CARROSSEL ================= */
@@ -89,6 +177,8 @@ body {
 .cards {
   display: flex;
   gap: 30px;
+  will-change: transform;
+  perspective: 1200px;
 }
 
 /* ================= CARD ================= */
@@ -98,22 +188,61 @@ body {
   background: #3a3fa0;
   border-radius: 22px;
   padding: 30px 20px;
-  text-align: center;
   flex-shrink: 0;
+  text-align: center;
+  position: relative;
 
   filter: blur(2px);
   opacity: 0.45;
   transform: scale(0.88);
 
-  transition: all 0.45s ease;
+  transition: transform 0.6s ease,
+              filter 0.6s ease,
+              opacity 0.6s ease,
+              box-shadow 0.6s ease;
+
   animation: fadeUp 0.8s ease forwards;
 }
 
 .card.active {
   filter: blur(0);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.12) translateY(-10px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+  z-index: 2;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #ff7a18;
+  border-radius: 0 0 22px 22px;
+}
+
+.card img {
+  width: 140px;
+  margin-bottom: 20px;
+  transition: transform 0.6s ease;
+}
+
+.card.active img {
+  transform: scale(1.08);
+}
+
+.card h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.85;
 }
 
 /* ================= SWIPE ================= */
@@ -122,7 +251,20 @@ body {
   display: none;
   justify-content: center;
   margin-top: 25px;
+  opacity: 0.7;
   animation: pulse 1.6s infinite;
+}
+
+.swipe-indicator span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.swipe-indicator::after {
+  content: "⇆";
+  font-size: 18px;
+  margin-left: 6px;
 }
 
 /* ================= FORMULÁRIO ================= */
@@ -137,11 +279,6 @@ body {
   animation: bgMove 20s ease-in-out infinite alternate;
 }
 
-@keyframes bgMove {
-  from { background-position: center top; }
-  to   { background-position: center bottom; }
-}
-
 .overlay {
   position: absolute;
   inset: 0;
@@ -154,8 +291,8 @@ body {
 .form-container {
   position: relative;
   z-index: 2;
-  max-width: 420px;
   width: 100%;
+  max-width: 420px;
   background: rgba(58,63,160,0.18);
   backdrop-filter: blur(10px);
   border-radius: 26px;
@@ -165,22 +302,10 @@ body {
   animation: formEnter 0.9s ease forwards;
 }
 
-@keyframes formEnter {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .form-container h1 {
   font-family: 'Anton', sans-serif;
   font-size: 42px;
   letter-spacing: 2px;
-  text-shadow: 0 0 18px rgba(255,122,24,0.35);
 }
 
 .form-container h1 span {
@@ -189,11 +314,9 @@ body {
 
 .form-container p {
   font-size: 14px;
-  margin: 18px 0 30px;
   opacity: 0.85;
+  margin: 18px 0 30px;
 }
-
-/* ================= FORM ================= */
 
 form {
   display: flex;
@@ -218,31 +341,21 @@ input {
   outline: none;
 }
 
-input:focus {
-  box-shadow: 0 0 0 2px rgba(255,122,24,0.45);
-}
-
 button {
   background: #ff7a18;
   color: #fff;
   border: none;
   padding: 14px;
   border-radius: 22px;
+  cursor: pointer;
   font-weight: 600;
   letter-spacing: 1px;
-  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: buttonPulse 2.8s infinite;
-}
-
-@keyframes buttonPulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,122,24,0.6); }
-  70% { box-shadow: 0 0 0 14px rgba(255,122,24,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,122,24,0); }
 }
 
 button:hover {
   transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,122,24,0.5);
 }
 
 /* ================= RESPONSIVO ================= */
@@ -255,11 +368,16 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  .activities-title { font-size: 34px; }
+  .subtitle { font-size: 13px; }
+
   .row { flex-direction: column; }
+
   .form-container {
     margin: 0 16px;
     padding: 34px 24px;
   }
+
   .form-container h1 {
     font-size: 34px;
   }
