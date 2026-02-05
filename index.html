@@ -1,275 +1,287 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAMP IEUES Adventure</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMP IEUES Adventure</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <div class="particles"></div>
+
 <header class="hero">
-  <nav class="navbar">
-    <h2 class="logo">CAMP IEUES</h2>
-  </nav>
 
-  <div class="hero-content">
-    <h1><span>*</span>ACAMPA</h1>
-    <h1>DENTRO <span>*</span></h1>
+<nav class="navbar">
+  <h2 class="logo">CAMP IEUES</h2>
+</nav>
 
-    <p>
-      Um tempo separado para comunhão, fé e alegria na presença de Deus.
-    </p>
+<div class="hero-content">
 
-<div class="countdown">
+  <h1><span>*</span>ACAMPA</h1>
+  <h1>DENTRO <span>*</span></h1>
 
-  <div class="time-box">
-    <span id="days">00</span>
-    <p>Dias</p>
+  <p>
+    Um tempo separado para comunhão, fé e alegria na presença de Deus.
+  </p>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown">
+
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>Dias</p>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>Horas</p>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>Min</p>
+    </div>
+
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <p>Seg</p>
+    </div>
+
   </div>
 
-  <div class="time-box">
-    <span id="hours">00</span>
-    <p>Horas</p>
-  </div>
-
-  <div class="time-box">
-    <span id="minutes">00</span>
-    <p>Min</p>
-  </div>
-
-  <div class="time-box">
-    <span id="seconds">00</span>
-    <p>Seg</p>
-  </div>
+  <button class="btn-participar"
+  onclick="location.href='formulario.html'">
+  Participar
+  </button>
 
 </div>
-
-    <button class="btn-participar"
-onclick="location.href='formulario.html'">Participar</button>
-
-  </div>
 </header>
 
-<!-- ATIVIDADES -->
+<!-- ================= ATIVIDADES ================= -->
 <section class="activities">
 
-  <h2 class="activities-title">
-    Atividades do <br><span>Acampadentro</span>
-  </h2>
+<h2 class="activities-title">
+Atividades do <br><span>Acampadentro</span>
+</h2>
 
-  <p class="subtitle">
-    Momentos preparados para fortalecer a fé, comunhão e alegria em Cristo.
-  </p>
+<p class="subtitle">
+Momentos preparados para fortalecer a fé, comunhão e alegria em Cristo.
+</p>
+
+<!-- ================= CARROSSEL ================= -->
+<div class="carousel">
+<div class="cards" id="carousel-track">
+
+<!-- CARD -->
+<div class="card">
+<img src="um.jpg">
+<h3>Oração 🙏</h3>
+<p>Tempo separado para buscar a presença de Deus juntos.</p>
+</div>
+
+<div class="card">
+<img src="dois.jpg">
+<h3>Devocional com Café ☕</h3>
+<p>Palavra, comunhão e um café para aquecer o coração.</p>
+</div>
+
+<div class="card">
+<img src="tres.jpg">
+<h3>Sessão Pipoca 🍿</h3>
+<p>Filme, reflexão e diversão em família.</p>
+</div>
+
+<div class="card">
+<img src="quatro.jpg">
+<h3>Gincana 🎯</h3>
+<p>Brincadeiras, desafios e trabalho em equipe.</p>
+</div>
+
+<div class="card">
+<img src="cinco.jpg">
+<h3>Louvor 🎶</h3>
+<p>Adoração, músicas e entrega ao Senhor.</p>
+</div>
+
+<div class="card">
+<img src="seis.jpg">
+<h3>Roda de Conversa 🗣️</h3>
+<p>Compartilhamento, escuta e edificação.</p>
+</div>
+
+<!-- DUPLICAÇÃO LOOP -->
+<div class="card">
+<img src="um.jpg">
+<h3>Oração 🙏</h3>
+<p>Tempo separado para buscar a presença de Deus juntos.</p>
+</div>
+
+<div class="card">
+<img src="dois.jpg">
+<h3>Devocional com Café ☕</h3>
+<p>Palavra, comunhão e um café para aquecer o coração.</p>
+</div>
+
+</div>
+</div>
+
+<div class="swipe-indicator">
+<span>Arraste →</span>
+</div>
+
+</section>
+
+<!-- ================= O QUE LEVAR ================= -->
 <section class="packing">
 
-  <h2>O que levar</h2>
-  <p class="subtitle">
-    Prepare seus itens para viver essa experiência com conforto.
-  </p>
+<h2>O que levar 🧳</h2>
 
-  <div class="packing-grid">
+<p class="subtitle">
+Prepare seus itens para viver essa experiência com conforto.
+</p>
 
-    <div class="item">
-      <img src="img/biblia.png">
-      <p>Bíblia</p>
-    </div>
+<div class="packing-grid">
 
-    <div class="item">
-      <img src="img/roupa.png">
-      <p>Roupas confortáveis</p>
-    </div>
+<div class="item">
+<img src="img/biblia.png">
+<p>Bíblia 📖</p>
+</div>
 
-    <div class="item">
-      <img src="img/higiene.png">
-      <p>Higiene pessoal</p>
-    </div>
+<div class="item">
+<img src="img/roupa.png">
+<p>Roupas confortáveis 👕</p>
+</div>
 
-    <div class="item">
-      <img src="img/cobertor.png">
-      <p>Cobertor</p>
-    </div>
+<div class="item">
+<img src="img/higiene.png">
+<p>Higiene pessoal 🪥</p>
+</div>
 
-    <div class="item">
-      <img src="img/travesseiro.png">
-      <p>Travesseiro</p>
-    </div>
+<div class="item">
+<img src="img/cobertor.png">
+<p>Cobertor 🛌</p>
+</div>
 
-    <div class="item">
-      <img src="img/garrafa.png">
-      <p>Garrafa de água</p>
-    </div>
+<div class="item">
+<img src="img/travesseiro.png">
+<p>Travesseiro 😴</p>
+</div>
 
-  </div>
+<div class="item">
+<img src="img/garrafa.png">
+<p>Garrafa de água 💧</p>
+</div>
 
-</section>
-  <!-- CARROSSEL -->
-  <div class="carousel">
-    <div class="cards" id="carousel-track">
-
-      <!-- ===== CARDS ===== -->
-      <div class="card">
-        <img src="um.jpg" alt="Oração">
-        <h3>Oração</h3>
-        <p>Tempo separado para buscar a presença de Deus juntos.</p>
-      </div>
-
-      <div class="card">
-        <img src="dois.jpg" alt="Devocional com Café">
-        <h3>Devocional com Café</h3>
-        <p>Palavra, comunhão e um café para aquecer o coração.</p>
-      </div>
-
-      <div class="card">
-        <img src="tres.jpg" alt="Sessão Pipoca">
-        <h3>Sessão Pipoca</h3>
-        <p>Filme, reflexão e diversão em família.</p>
-      </div>
-
-      <div class="card">
-        <img src="quatro.jpg" alt="Gincana">
-        <h3>Gincana</h3>
-        <p>Brincadeiras, desafios e trabalho em equipe.</p>
-      </div>
-
-      <div class="card">
-        <img src="cinco.jpg" alt="Louvor">
-        <h3>Louvor</h3>
-        <p>Adoração, músicas e entrega ao Senhor.</p>
-      </div>
-
-      <div class="card">
-        <img src="seis.jpg" alt="Roda de Conversa">
-        <h3>Roda de Conversa</h3>
-        <p>Compartilhamento, escuta e edificação.</p>
-      </div>
-
-      <!-- 🔁 DUPLICAÇÃO PARA LOOP INFINITO -->
-      <div class="card">
-        <img src="um.jpg" alt="Oração">
-        <h3>Oração</h3>
-        <p>Tempo separado para buscar a presença de Deus juntos.</p>
-      </div>
-
-      <div class="card">
-        <img src="dois.jpg" alt="Devocional com Café">
-        <h3>Devocional com Café</h3>
-        <p>Palavra, comunhão e um café para aquecer o coração.</p>
-      </div>
-
-      <div class="card">
-        <img src="tres.jpg" alt="Sessão Pipoca">
-        <h3>Sessão Pipoca</h3>
-        <p>Filme, reflexão e diversão em família.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="swipe-indicator">
-    <span>Arraste</span>
-  </div>
+</div>
 </section>
 
-<!-- JS DO CARROSSEL -->
+<!-- ================= JS CARROSSEL ================= -->
 <script>
 const track = document.getElementById('carousel-track');
 let position = 0;
-const speed = 0.6; // 🔥 velocidade ajustada
+const speed = 0.6;
 let isTouching = false;
 let startX = 0;
 
-function loopCarousel() {
-  if (!isTouching) position -= speed;
+function loopCarousel(){
 
-  const cardWidth = track.children[0].offsetWidth + 30;
+if(!isTouching) position -= speed;
 
-  if (Math.abs(position) >= cardWidth) {
-    position += cardWidth;
-    track.appendChild(track.firstElementChild);
-  }
+const cardWidth =
+track.children[0].offsetWidth + 30;
 
-  track.style.transform = `translateX(${position}px)`;
-  highlightCenter();
-  requestAnimationFrame(loopCarousel);
+if(Math.abs(position) >= cardWidth){
+position += cardWidth;
+track.appendChild(track.firstElementChild);
 }
 
-function highlightCenter() {
-  const center = window.innerWidth / 2;
-  [...track.children].forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const cardCenter = rect.left + rect.width / 2;
-    card.classList.toggle(
-      'active',
-      Math.abs(cardCenter - center) < rect.width / 2
-    );
-  });
+track.style.transform =
+`translateX(${position}px)`;
+
+requestAnimationFrame(loopCarousel);
 }
 
-track.addEventListener('touchstart', e => {
-  isTouching = true;
-  startX = e.touches[0].clientX;
+track.addEventListener('touchstart', e=>{
+isTouching = true;
+startX = e.touches[0].clientX;
 });
 
-track.addEventListener('touchmove', e => {
-  const delta = e.touches[0].clientX - startX;
-  position += delta * 0.7;
-  startX = e.touches[0].clientX;
+track.addEventListener('touchmove', e=>{
+const delta = e.touches[0].clientX - startX;
+position += delta * 0.7;
+startX = e.touches[0].clientX;
 });
 
-track.addEventListener('touchend', () => {
-  isTouching = false;
+track.addEventListener('touchend', ()=>{
+isTouching = false;
 });
 
 loopCarousel();
 </script>
 
+<!-- ================= COUNTDOWN ================= -->
 <script>
-const eventDate = new Date("2026-03-15T19:00:00").getTime();
+const eventDate =
+new Date("2026-03-15T19:00:00").getTime();
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const diff = eventDate - now;
+function updateCountdown(){
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / 1000 / 60) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+const now = new Date().getTime();
+const diff = eventDate - now;
 
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
+const days =
+Math.floor(diff/(1000*60*60*24));
+
+const hours =
+Math.floor((diff/(1000*60*60))%24);
+
+const minutes =
+Math.floor((diff/1000/60)%60);
+
+const seconds =
+Math.floor((diff/1000)%60);
+
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
 </script>
 
+<!-- ================= PARTICLES ================= -->
 <script>
-const particlesContainer = document.querySelector(".particles");
+const particlesContainer =
+document.querySelector(".particles");
 
-for (let i = 0; i < 40; i++) {
-  const particle = document.createElement("span");
+for(let i=0;i<40;i++){
 
-  const size = Math.random() * 6 + 2;
-  const posX = Math.random() * 100;
-  const duration = Math.random() * 20 + 10;
-  const delay = Math.random() * 5;
+const particle =
+document.createElement("span");
 
-  particle.style.width = size + "px";
-  particle.style.height = size + "px";
-  particle.style.left = posX + "%";
-  particle.style.animationDuration = duration + "s";
-  particle.style.animationDelay = delay + "s";
+const size = Math.random()*6+2;
+const posX = Math.random()*100;
+const duration = Math.random()*20+10;
+const delay = Math.random()*5;
 
-  particlesContainer.appendChild(particle);
+particle.style.width = size+"px";
+particle.style.height = size+"px";
+particle.style.left = posX+"%";
+particle.style.animationDuration =
+duration+"s";
+particle.style.animationDelay =
+delay+"s";
+
+particlesContainer.appendChild(particle);
 }
 </script>
+
 </body>
 </html>
