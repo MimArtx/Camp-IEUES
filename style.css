@@ -364,3 +364,44 @@ body {
     transform: translateY(-10vh) scale(1);
   }
 }
+/* ================= PACKING ================= */
+
+.packing {
+  padding: 120px 20px;
+  background: #070b22;
+  text-align: center;
+}
+
+.packing h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.packing-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+}
+
+.item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255,122,24,0.15);
+}
+
+.item img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.item p {
+  font-size: 14px;
+}
