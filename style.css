@@ -26,27 +26,21 @@ body{
   overflow:hidden;
 }
 
-/* FUNDO CORRIGIDO */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-
   background:
   linear-gradient(180deg, rgba(10,14,40,.55), rgba(10,14,40,.95)),
   url("principal.jpg");
-
   background-size:cover;
   background-position:center 75%;
   background-repeat:no-repeat;
-
   transform:scale(1.15);
   animation:moveBg 25s ease-in-out infinite alternate;
-
   z-index:-2;
 }
 
-/* MOVIMENTO AUTOMÁTICO */
 @keyframes moveBg{
   0%{transform:scale(1.15) translate(0,0);}
   50%{transform:scale(1.15) translate(-25px,-12px);}
@@ -58,7 +52,6 @@ body{
 .hero-content{
   max-width:520px;
   margin-top:160px;
-  animation:fadeLeft 1s ease forwards;
 }
 
 .hero-content h1{
@@ -90,7 +83,6 @@ body{
   border-radius:40px;
   cursor:pointer;
   margin-top:20px;
-
   box-shadow:0 0 0 rgba(255,122,24,.7);
   animation:pulseButton 2s infinite;
   transition:.3s;
@@ -130,60 +122,132 @@ body{
   color:#ff7a18;
 }
 
-/* ================= PARTICLES ================= */
+/* ================= CARROSSEL ================= */
 
-.particles{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  z-index:-1;
-}
-
-.particles span{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:#ff7a18;
-  border-radius:50%;
-  opacity:.6;
-  animation:floatParticle linear infinite;
-}
-
-@keyframes floatParticle{
-  from{transform:translateY(100vh) scale(0);}
-  to{transform:translateY(-10vh) scale(1);}
-}
-
-/* ================= PACKING ================= */
-
-.packing{
-  padding:120px 20px;
+.carousel-section{
+  padding:100px 20px;
   background:#070b22;
-  text-align:center;
 }
 
-.packing h2{
+.carousel-title{
   font-family:'Anton',sans-serif;
   font-size:42px;
+  text-align:center;
+  margin-bottom:50px;
 }
 
-.packing-grid{
-  margin-top:50px;
+.carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
+}
+
+.carousel::-webkit-scrollbar{
+  height:8px;
+}
+
+.carousel::-webkit-scrollbar-thumb{
+  background:#ff7a18;
+  border-radius:20px;
+}
+
+.slide{
+  min-width:260px;
+  height:340px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  scroll-snap-align:center;
+  flex-shrink:0;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.slide:hover img{
+  transform:scale(1.1);
+}
+
+/* TEXTO DO SLIDE */
+
+.slide-content{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:20px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+}
+
+.slide-content h3{
+  margin-bottom:6px;
+}
+
+/* ================= O QUE LEVAR ================= */
+
+.levar{
+  padding:100px 20px;
+  text-align:center;
+  background:linear-gradient(180deg,#0f0c29,#1b1446);
+}
+
+.levar h2{
+  font-family:'Anton',sans-serif;
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+.levar-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:30px;
+  gap:25px;
+  max-width:900px;
+  margin:auto;
 }
 
-.item{
+.levar-item{
   background:rgba(255,255,255,.05);
-  border-radius:20px;
-  padding:20px;
+  backdrop-filter:blur(10px);
+  padding:25px 15px;
+  border-radius:18px;
   transition:.3s;
 }
 
-.item:hover{
+.levar-item:hover{
   transform:translateY(-8px) scale(1.05);
-  background:rgba(255,122,24,.15);
+  box-shadow:0 0 25px rgba(255,140,0,.4);
+}
+
+.icon{
+  font-size:2.5rem;
+  margin-bottom:10px;
+  display:inline-block;
+  animation:float 4s ease-in-out infinite;
+}
+
+/* ================= ANIMAÇÕES ================= */
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+
+@keyframes rotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
 
 /* ================= RESPONSIVO ================= */
@@ -208,98 +272,13 @@ body{
   font-size:48px;
 }
 
+.carousel{
+  gap:14px;
 }
 
-/* =========================
-   SEÇÃO O QUE LEVAR
-========================= */
-
-.levar {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(180deg,#0f0c29,#1b1446);
-  color: white;
+.slide{
+  min-width:220px;
+  height:300px;
 }
 
-.levar h2 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-}
-
-/* GRID */
-
-.levar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* CARD */
-
-.item {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding: 25px 15px;
-  border-radius: 18px;
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.item:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(255,140,0,0.4);
-}
-
-/* ÍCONE */
-
-.icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  display: inline-block;
-  animation: float 4s ease-in-out infinite;
-}
-
-/* Animações alternadas */
-
-.item:nth-child(2) .icon { animation: pulse 3s infinite; }
-.item:nth-child(3) .icon { animation: rotate 6s linear infinite; }
-.item:nth-child(4) .icon { animation: float 5s ease-in-out infinite; }
-.item:nth-child(5) .icon { animation: pulse 4s infinite; }
-.item:nth-child(6) .icon { animation: rotate 7s linear infinite; }
-
-/* TEXTO */
-
-.item p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-/* =========================
-   KEYFRAMES
-========================= */
-
-/* Flutuar */
-
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-/* Pulsar */
-
-@keyframes pulse {
-  0%   { transform: scale(1); opacity: 1; }
-  50%  { transform: scale(1.15); opacity: .7; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Girar */
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
 }
