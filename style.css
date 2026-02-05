@@ -15,10 +15,24 @@ scroll-behavior:smooth;
 }
 
 body{
+margin:0;
 font-family:'Poppins', sans-serif;
-background:#050816;
-color:#fff;
-overflow-x:hidden;
+
+@media (max-width:768px){
+
+.hero{
+background-attachment:scroll;
+}
+
+body{
+background-attachment:scroll;
+}
+
+}
+
+section{
+background:rgba(5,8,25,.85);
+backdrop-filter:blur(4px);
 }
 
 
