@@ -5,32 +5,45 @@
   <title>Inscrição | CAMP IEUES</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <section class="form-bg">
+
+  <!-- Overlay escuro -->
   <div class="overlay"></div>
 
+  <!-- Container -->
   <div class="form-container">
-    <h1><span>*</span>INSCRIÇÃO<span>*</span></h1>
+
+    <h1><span>*</span> INSCRIÇÃO <span>*</span></h1>
     <p>Preencha os dados para confirmar sua presença no Acampadentro.</p>
 
-    <form onsubmit="enviarWhats(event)">
-  <input type="text" id="nome" placeholder="Nome completo" required>
+    <form class="form-box" onsubmit="enviarWhats(event)">
 
-  <div class="row">
-    <input type="number" id="idade" placeholder="Idade" required>
-    <input type="tel" id="telefone" placeholder="Telefone (WhatsApp)" required>
-  </div>
+      <input type="text" id="nome" placeholder="Nome completo" required>
 
-  <button type="submit">Confirmar presença</button>
-</form>
+      <div class="row">
+        <input type="number" id="idade" placeholder="Idade" required>
+        <input type="tel" id="telefone" placeholder="Telefone (WhatsApp)" required>
+      </div>
+
+      <button type="submit">
+        Confirmar presença
+      </button>
+
+    </form>
+
   </div>
 </section>
 
+<!-- SCRIPT WHATS -->
 <script>
 function enviarWhats(e) {
   e.preventDefault();
@@ -50,5 +63,6 @@ function enviarWhats(e) {
   window.open(url, '_blank');
 }
 </script>
+
 </body>
 </html>
