@@ -330,6 +330,21 @@ button:hover {
   box-shadow: 0 12px 30px rgba(255,122,24,0.5);
 }
 
+.form-container {
+  animation: formEnter 0.9s ease forwards;
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* ================= RESPONSIVO ================= */
 
 @media (max-width: 768px) {
