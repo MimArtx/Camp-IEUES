@@ -52,9 +52,15 @@ rgba(5,8,22,.2) 70%
 position:relative;
 z-index:2;
 
-max-width:520px;
-padding:40px;
-border-radius:28px;
+max-width:650px;
+margin-left:60px; /* joga para esquerda */
+
+padding:0; 
+background:none;
+backdrop-filter:none;
+box-shadow:none;
+border:none;
+}
 
 /* GLASS */
 background:rgba(255,255,255,.08);
