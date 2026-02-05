@@ -71,6 +71,31 @@ body {
   color: #ff7a18;
 }
 
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    margin-top: 120px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .activities {
+    padding: 80px 20px;
+  }
+
+  .activities-title {
+    font-size: 32px;
+  }
+
+}
+
+
 /* ================= ATIVIDADES ================= */
 
 .activities {
