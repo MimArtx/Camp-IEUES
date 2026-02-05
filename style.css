@@ -25,38 +25,47 @@ overflow-x:hidden;
 HERO (IMAGEM PRINCIPAL)
 ========================= */
 
+/* =========================
+HERO PARALLAX REAL
+========================= */
+
 .hero{
 position:relative;
-min-height:100vh;
-width:100%;
-
+height:100vh;
+overflow:hidden;
 display:flex;
 align-items:center;
-justify-content:flex-start;
-
 padding-left:8%;
-padding-right:5%;
-
-/* IMAGEM FIXA PROFISSIONAL */
-background:url("principal.jpg") center/cover no-repeat fixed;
 }
 
-/* overlay SUAVE — não mata as cores */
+/* FUNDO QUE VAI SE MOVER */
 
-.hero::before{
+.hero-bg{
+position:absolute;
+top:-10%;
+left:0;
+width:100%;
+height:120%;
+
+background:url("principal.jpg") center/cover no-repeat;
+
+z-index:-1;
+will-change:transform;
+}
+
+/* overlay profissional */
+
+.hero::after{
 content:"";
 position:absolute;
 inset:0;
 
 background:linear-gradient(
 90deg,
-rgba(5,8,22,.75) 15%,
+rgba(5,8,22,.80) 15%,
 rgba(5,8,22,.45) 40%,
-rgba(5,8,22,.15) 65%,
-transparent
+rgba(5,8,22,.10) 70%
 );
-
-z-index:1;
 }
 
 /* conteúdo */
@@ -65,9 +74,9 @@ z-index:1;
 position:relative;
 z-index:2;
 max-width:520px;
-text-align:left;
 animation:fadeUp 1s ease;
 }
+
 
 .hero h1{
 font-family:'Anton', sans-serif;
