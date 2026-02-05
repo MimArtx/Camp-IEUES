@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap');
 
 /* ================= RESET ================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= ANIMAÇÕES ================= */
+/* ================= ANIMAÇÕES GERAIS ================= */
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -49,24 +48,12 @@ body {
   align-items: center;
 }
 
-.logo {
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
 .menu {
   list-style: none;
   display: flex;
   gap: 30px;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.login {
-  border: 1px solid #fff;
-  padding: 6px 16px;
-  border-radius: 20px;
 }
 
 .hero-content {
@@ -78,7 +65,6 @@ body {
 .hero-content h1 {
   font-family: 'Anton', sans-serif;
   font-size: 96px;
-  line-height: 0.95;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -87,50 +73,10 @@ body {
   color: #ff7a18;
 }
 
-.hero-content p {
-  margin: 22px 0;
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.85;
-}
-
-.hero-content button {
-  background: #ff7a18;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hero-content button:hover {
-  transform: translateY(-3px);
-  opacity: 0.9;
-}
-
 /* ================= ACTIVITIES ================= */
 
 .activities {
   padding: 120px 20px;
-  background: #0b0f2f;
-  overflow: hidden;
-}
-
-.activities h2 {
-  font-family: 'Anton', sans-serif;
-  font-size: 42px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  max-width: 520px;
-  font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.75;
-  margin-bottom: 50px;
 }
 
 /* ================= CARROSSEL ================= */
@@ -143,7 +89,6 @@ body {
 .cards {
   display: flex;
   gap: 30px;
-  will-change: transform;
 }
 
 /* ================= CARD ================= */
@@ -153,19 +98,14 @@ body {
   background: #3a3fa0;
   border-radius: 22px;
   padding: 30px 20px;
-  flex-shrink: 0;
   text-align: center;
-  position: relative;
+  flex-shrink: 0;
 
   filter: blur(2px);
   opacity: 0.45;
   transform: scale(0.88);
 
-  transition: transform 0.45s ease,
-              filter 0.45s ease,
-              opacity 0.45s ease,
-              box-shadow 0.45s ease;
-
+  transition: all 0.45s ease;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -174,57 +114,15 @@ body {
   opacity: 1;
   transform: scale(1.1);
   box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-  z-index: 2;
 }
 
-.card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 6px;
-  width: 100%;
-  background: #ff7a18;
-  border-radius: 0 0 22px 22px;
-}
-
-.card img {
-  width: 140px;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 13px;
-  line-height: 1.5;
-  opacity: 0.85;
-}
-
-/* ================= SWIPE INDICATOR ================= */
+/* ================= SWIPE ================= */
 
 .swipe-indicator {
   display: none;
   justify-content: center;
   margin-top: 25px;
-  opacity: 0.7;
   animation: pulse 1.6s infinite;
-}
-
-.swipe-indicator span {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.swipe-indicator::after {
-  content: "⇆";
-  font-size: 18px;
-  margin-left: 6px;
 }
 
 /* ================= FORMULÁRIO ================= */
@@ -236,21 +134,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.form-bg {
   animation: bgMove 20s ease-in-out infinite alternate;
 }
 
 @keyframes bgMove {
-  from {
-    background-position: center top;
-  }
-  to {
-    background-position: center bottom;
-  }
+  from { background-position: center top; }
+  to   { background-position: center bottom; }
 }
-
 
 .overlay {
   position: absolute;
@@ -264,20 +154,33 @@ body {
 .form-container {
   position: relative;
   z-index: 2;
-  width: 100%;
   max-width: 420px;
+  width: 100%;
   background: rgba(58,63,160,0.18);
   backdrop-filter: blur(10px);
   border-radius: 26px;
   padding: 40px 30px;
   text-align: center;
   box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+  animation: formEnter 0.9s ease forwards;
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .form-container h1 {
   font-family: 'Anton', sans-serif;
   font-size: 42px;
   letter-spacing: 2px;
+  text-shadow: 0 0 18px rgba(255,122,24,0.35);
 }
 
 .form-container h1 span {
@@ -286,9 +189,11 @@ body {
 
 .form-container p {
   font-size: 14px;
-  opacity: 0.85;
   margin: 18px 0 30px;
+  opacity: 0.85;
 }
+
+/* ================= FORM ================= */
 
 form {
   display: flex;
@@ -313,36 +218,31 @@ input {
   outline: none;
 }
 
+input:focus {
+  box-shadow: 0 0 0 2px rgba(255,122,24,0.45);
+}
+
 button {
   background: #ff7a18;
   color: #fff;
   border: none;
   padding: 14px;
   border-radius: 22px;
-  cursor: pointer;
   font-weight: 600;
   letter-spacing: 1px;
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: buttonPulse 2.8s infinite;
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,122,24,0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(255,122,24,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,122,24,0); }
 }
 
 button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255,122,24,0.5);
-}
-
-.form-container {
-  animation: formEnter 0.9s ease forwards;
-}
-
-@keyframes formEnter {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 /* ================= RESPONSIVO ================= */
@@ -356,12 +256,10 @@ button:hover {
 
 @media (max-width: 480px) {
   .row { flex-direction: column; }
-
   .form-container {
     margin: 0 16px;
     padding: 34px 24px;
   }
-
   .form-container h1 {
     font-size: 34px;
   }
