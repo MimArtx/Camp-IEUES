@@ -334,3 +334,33 @@ body {
   font-size: 12px;
   opacity: 0.8;
 }
+
+/* ================= PARTICLES ================= */
+
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff7a18;
+  border-radius: 50%;
+  opacity: 0.6;
+
+  animation: floatParticle linear infinite;
+}
+
+/* Movimento */
+@keyframes floatParticle {
+  from {
+    transform: translateY(100vh) scale(0);
+  }
+  to {
+    transform: translateY(-10vh) scale(1);
+  }
+}
