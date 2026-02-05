@@ -1,261 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Acampadentro IEUES</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IEUES</title>
+   
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+<header class="hero">
+  <nav class="navbar">
+    <h2 class="logo">IEUES</h2>
+    <ul class="menu">
+      <li>Localização</li>
+      <li>Data e Horário</li>
+      <li>Lista </li>
+      <li>Inscrição</li>
+      <li class="login">Login</li>
+    </ul>
+  </nav>
 
+  <div class="hero-content">
+    <h1>ACAMPA<span>*</span></h1>
+    <p>
+     
+    </p>
+    <button>Adventure</button>
+  </div>
+</header>
 
-<!-- HERO -->
+<section class="activities">
+  <h2>ATIVIDADES<br> </h2>
+  <p class="subtitle">
+    
+  </p>
 
-<section class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <h1>Camp IEUES</h1>
-        <p>Um tempo preparado por Deus para transformar vidas.</p>
-
-        <a href="#inscricao">
-            <button class="btn">Quero participar</button>
-        </a>
+  <div class="cards">
+    <div class="card">
+      <h3>Oração</h3>
+      <p>.</p>
+      <button></button>
     </div>
 
+    <div class="card">
+      <h3>Devocional com Café</h3>
+      <p></p>
+      <button></button>
+    </div>
+
+    <div class="card">
+      <h3>Gincana</h3>
+      <p>.</p>
+      <button></button>
+    </div>
+  </div>
 </section>
 
-
-
-<!-- SECTION VITRINE -->
-
-<section class="showcase">
-
-<div class="showcase-top">
-
-<h2>
-Escolha sua experiência
-</h2>
-
-<p>
-Prepare-se para momentos inesquecíveis de comunhão,
-crescimento espiritual e muita alegria.
-</p>
-
-</div>
-
-
-<div class="swiper showcaseSwiper">
-
-<div class="swiper-wrapper">
-
-<!-- CARD 1 -->
-
-<div class="swiper-slide">
-
-<div class="activity-card">
-
-<div class="activity-number">
-01
-</div>
-
-<img src="um.jpg">
-
-<h3>Oração</h3>
-
-<p>
-Tempo separado para buscar a presença de Deus.
-</p>
-
-<button>
-Explorar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- CARD 2 -->
-
-<div class="swiper-slide">
-
-<div class="activity-card">
-
-<div class="activity-number">
-02
-</div>
-
-<img src="dois.jpg">
-
-<h3>Devocional</h3>
-
-<p>
-Palavra, café e comunhão.
-</p>
-
-<button>
-Explorar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- CARD 3 -->
-
-<div class="swiper-slide">
-
-<div class="activity-card">
-
-<div class="activity-number">
-03
-</div>
-
-<img src="tres.jpg">
-
-<h3>Sessão Pipoca</h3>
-
-<p>
-Filme, reflexão e diversão.
-</p>
-
-<button>
-Explorar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- CARD 4 -->
-
-<div class="swiper-slide">
-
-<div class="activity-card">
-
-<div class="activity-number">
-04
-</div>
-
-<img src="quatro.jpg">
-
-<h3>Gincana</h3>
-
-<p>
-Brincadeiras e desafios em equipe.
-</p>
-
-<button>
-Explorar
-</button>
-
-</div>
-
-</div>
-
-
-<!-- CARD 5 -->
-
-<div class="swiper-slide">
-
-<div class="activity-card">
-
-<div class="activity-number">
-05
-</div>
-
-<img src="cinco.jpg">
-
-<h3>Louvor</h3>
-
-<p>
-Adoração e entrega ao Senhor.
-</p>
-
-<button>
-Explorar
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-
-</div>
-
+<section class="gallery">
+  <h2> <br> O que levar ?</h2>
+  <p>
+    
+  </p>
 </section>
-
-
-
-<footer>
-© 2026 IEUES — Todos os direitos reservados
-</footer>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-<script>
-
-new Swiper(".showcaseSwiper",{
-
-loop:true,
-centeredSlides:true,
-grabCursor:true,
-
-slidesPerView:1.2,
-spaceBetween:30,
-
-speed:900,
-
-autoplay:{
-delay:2800,
-disableOnInteraction:false,
-},
-
-breakpoints:{
-
-768:{
-slidesPerView:2,
-},
-
-1100:{
-slidesPerView:3,
-}
-
-},
-
-navigation:{
-nextEl:".swiper-button-next",
-prevEl:".swiper-button-prev",
-}
-
-});
-
-</script>
 
 </body>
 </html>
