@@ -121,39 +121,34 @@ body{
   font-weight:700;
   color:#ff7a18;
 }
-
 /* ================= CARROSSEL VITRINE ================= */
-
-.activities{
-  padding:100px 20px;
-  background:#070b22;
-  text-align:center;
-}
-
-.activities-title{
-  font-family:'Anton',sans-serif;
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.activities-title span{
-  color:#ff7a18;
-}
-
-.subtitle{
-  opacity:.8;
-  margin-bottom:50px;
-}
 
 .carousel{
   overflow:hidden;
   position:relative;
+  width:100%;
+  margin-top:40px;
 }
 
 .carousel-track{
   display:flex;
   gap:25px;
   width:max-content;
+  animation:scrollCarousel 35s linear infinite;
+}
+
+/* pausa quando o usuário interagir */
+.carousel:hover .carousel-track{
+  animation-play-state:paused;
+}
+
+@keyframes scrollCarousel{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 .card{
@@ -164,6 +159,7 @@ body{
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,.4);
   transition:.4s;
+  flex-shrink:0;
 }
 
 .card img{
@@ -177,6 +173,8 @@ body{
 .card:hover{
   transform:translateY(-10px) scale(1.05);
 }
+
+
 
 /* ================= O QUE LEVAR ================= */
 
