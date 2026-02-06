@@ -61,19 +61,21 @@ const telefone = document.getElementById('telefone').value;
 const cargo = document.getElementById('cargo').value;
 
 // 🔥 ENVIA PARA PLANILHA (APPS SCRIPT)
-fetch("https://script.google.com/macros/s/AKfycbyCPLy_O2HeYZeMNJtKTFNhC9ukZuyBrUbcPlM2xLSghMl7DEyIT4wKSpt5tPrSsac/exec",{
-  method:"POST",
-  mode:"no-cors",
-  headers:{
-    "Content-Type":"application/json"
+fetch("SUA_URL_DO_SCRIPT", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
   },
-  body:JSON.stringify({
-    nome,
-    idade,
-    telefone,
-    cargo
+  body: JSON.stringify({
+    nome: nome,
+    idade: idade,
+    telefone: telefone,
+    cargo: cargo
   })
-});
+})
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.log(err));
 
 // 🔥 WHATSAPP
 const mensagem =
