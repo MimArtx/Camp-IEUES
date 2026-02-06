@@ -56,6 +56,20 @@
 function enviarWhats(e){
 e.preventDefault();
 
+fetch("SUA_URL_DO_SCRIPT",{
+  method:"POST",
+  mode:"no-cors",
+  headers:{
+    "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+    nome,
+    idade,
+    telefone,
+    cargo
+  })
+});
+
 const nome = document.getElementById('nome').value;
 const idade = document.getElementById('idade').value;
 const telefone = document.getElementById('telefone').value;
