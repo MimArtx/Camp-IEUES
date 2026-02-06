@@ -6,23 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form-style.css">
 
   <!-- Fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<section class="form-bg">
+<section class="form-hero">
 
-  <!-- Overlay escuro -->
   <div class="overlay"></div>
 
-  <!-- Container -->
   <div class="form-container">
 
-    <h1><span>*</span> INSCRIÇÃO <span>*</span></h1>
+    <h1>INSCRIÇÃO</h1>
     <p>Preencha os dados para confirmar sua presença no Acampadentro.</p>
 
     <form class="form-box" onsubmit="enviarWhats(event)">
@@ -34,6 +32,15 @@
         <input type="tel" id="telefone" placeholder="Telefone (WhatsApp)" required>
       </div>
 
+      <!-- SELECT NOVO -->
+      <select id="tipo" required>
+        <option value="">Você é...</option>
+        <option>Jovem</option>
+        <option>Juvenil</option>
+        <option>Ombreiro</option>
+        <option>Liderança</option>
+      </select>
+
       <button type="submit">
         Confirmar presença
       </button>
@@ -41,25 +48,32 @@
     </form>
 
   </div>
+
 </section>
 
-<!-- SCRIPT WHATS -->
+
 <script>
 function enviarWhats(e) {
+
   e.preventDefault();
 
   const nome = document.getElementById('nome').value;
   const idade = document.getElementById('idade').value;
   const telefone = document.getElementById('telefone').value;
+  const tipo = document.getElementById('tipo').value;
 
   const mensagem =
-    `📌 *INSCRIÇÃO ACAMPADENTRO IEUES*%0A%0A` +
-    `👤 Nome: ${nome}%0A` +
-    `🎂 Idade: ${idade}%0A` +
-    `📱 Telefone: ${telefone}%0A%0A` +
-    `✅ Presença confirmada!`;
+`📌 *INSCRIÇÃO ACAMPADENTRO IEUES*
 
-  const url = `https://wa.me/5512981151894?text=${mensagem}`;
+👤 Nome: ${nome}
+🎂 Idade: ${idade}
+🙋 Participação: ${tipo}
+
+✅ Presença confirmada! Nos vemos lá 🔥`;
+
+  const url =
+`https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`;
+
   window.open(url, '_blank');
 }
 </script>
