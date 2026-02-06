@@ -61,10 +61,14 @@ const idade = document.getElementById('idade').value;
 const telefone = document.getElementById('telefone').value;
 const cargo = document.getElementById('cargo').value;
 
-// ENVIA PARA PLANILHA
-fetch("COLE_A_URL_DO_APPS_SCRIPT_AQUI",{
+// ENVIO PARA PLANILHA
+fetch("https://script.google.com/macros/s/AKfycbyCPLy_O2HeYZeMNJtKTFNhC9ukZuyBrUbcPlM2xLSghMl7DEyIT4wKSpt5tPrSsac/exec",{
 
 method:"POST",
+mode:"no-cors", // 🔥 evita bloqueio do GitHub
+headers:{
+"Content-Type":"application/json"
+},
 body:JSON.stringify({
 nome,
 idade,
@@ -74,13 +78,15 @@ cargo
 
 });
 
-// WHATSAPP
+// WHATS
 const mensagem =
-`📌 *INSCRIÇÃO ACAMPADENTRO IEUES*%0A%0A
-👤 Nome: ${nome}%0A
-🎂 Idade: ${idade}%0A
-📱 Telefone: ${telefone}%0A
-📌 Cargo: ${cargo}%0A%0A
+`📌 INSCRIÇÃO ACAMPADENTRO IEUES
+
+👤 Nome: ${nome}
+🎂 Idade: ${idade}
+📱 Telefone: ${telefone}
+📌 Cargo: ${cargo}
+
 ✅ Presença confirmada!`;
 
 window.open(
