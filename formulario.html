@@ -53,30 +53,39 @@
 
 
 <script>
-function enviarWhats(e) {
+function enviarWhats(e){
+e.preventDefault();
 
-  e.preventDefault();
+const nome = document.getElementById('nome').value;
+const idade = document.getElementById('idade').value;
+const telefone = document.getElementById('telefone').value;
+const cargo = document.getElementById('cargo').value;
 
-  const nome = document.getElementById('nome').value;
-  const idade = document.getElementById('idade').value;
-  const telefone = document.getElementById('telefone').value;
-  const tipo = document.getElementById('tipo').value;
+// ENVIA PARA PLANILHA
+fetch("COLE_A_URL_DO_APPS_SCRIPT_AQUI",{
 
-  const mensagem =
-`📌 *INSCRIÇÃO ACAMPADENTRO IEUES*
+method:"POST",
+body:JSON.stringify({
+nome,
+idade,
+telefone,
+cargo
+})
 
-👤 Nome: ${nome}
-🎂 Idade: ${idade}
-🙋 Participação: ${tipo}
+});
 
-✅ Presença confirmada! Nos vemos lá 🔥`;
+// WHATSAPP
+const mensagem =
+`📌 *INSCRIÇÃO ACAMPADENTRO IEUES*%0A%0A
+👤 Nome: ${nome}%0A
+🎂 Idade: ${idade}%0A
+📱 Telefone: ${telefone}%0A
+📌 Cargo: ${cargo}%0A%0A
+✅ Presença confirmada!`;
 
-  const url =
-`https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`;
-
-  window.open(url, '_blank');
+window.open(
+`https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`,
+'_blank'
+);
 }
 </script>
-
-</body>
-</html>
