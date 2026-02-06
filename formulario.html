@@ -60,7 +60,9 @@ const idade = document.getElementById('idade').value;
 const telefone = document.getElementById('telefone').value;
 const cargo = document.getElementById('cargo').value;
 
+
 // 🔥 ENVIA PARA PLANILHA (APPS SCRIPT)
+
 fetch("https://script.google.com/macros/s/AKfycbwFvZ0IhklR_eUclToVxHAmotPYL224kbhSAWAkVHix1Xke8vOYS3_vxFHhLQ8tgMo9/exec", {
   method: "POST",
   headers: {
@@ -78,6 +80,7 @@ fetch("https://script.google.com/macros/s/AKfycbwFvZ0IhklR_eUclToVxHAmotPYL224kb
 .catch(err => console.log(err));
 
 // 🔥 WHATSAPP
+
 const mensagem =
 `📌 INSCRIÇÃO ACAMPADENTRO IEUES
 
