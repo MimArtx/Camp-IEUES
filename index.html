@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IEUES</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Fonte mais forte para títulos -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- SWIPER CSS (melhor carregar no head) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
 </head>
 
 <body>
-
 
 <header class="hero">
 
     <!-- FUNDO -->
     <div class="parallax-layer layer-back"></div>
 
-    <!-- LUZ / ATMOSFERA -->
+    <!-- ATMOSFERA -->
     <div class="parallax-layer layer-glow"></div>
 
     <!-- LOGO -->
@@ -49,11 +54,9 @@
     Atividades do Acampadentro
   </h2>
 
-  <!-- SWIPER -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
 
-      <!-- CARD -->
       <div class="swiper-slide">
         <img src="um.jpg" class="slide-img">
         <h3>Oração 🙏</h3>
@@ -92,16 +95,13 @@
 
     </div>
 
-    <!-- setas -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-
-    <!-- bolinhas -->
     <div class="swiper-pagination"></div>
+
   </div>
 
 </section>
-
 
 
 <!-- ================= O QUE LEVAR ================= -->
@@ -124,17 +124,9 @@
 </footer>
 
 
-
-<!-- SWIPER CDN -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
+<!-- SWIPER JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
-<!-- LOOP ATIVO -->
 <script>
 new Swiper(".mySwiper", {
 
@@ -160,27 +152,29 @@ new Swiper(".mySwiper", {
   },
 
   breakpoints:{
-    700:{
-      slidesPerView:2.2
-    },
-    1024:{
-      slidesPerView:3
-    }
+    700:{ slidesPerView:2.2 },
+    1024:{ slidesPerView:3 }
   }
 
 });
 </script>
 
+
+<!-- ✅ PARALLAX CINEMATOGRÁFICO REAL -->
 <script>
 
-const bg = document.querySelector('.hero-bg');
+const back = document.querySelector(".layer-back");
+const glow = document.querySelector(".layer-glow");
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
 
-    let scroll = window.scrollY;
+    const scroll = window.scrollY;
 
-    bg.style.transform =
-        `translateY(${scroll * 0.45}px)`;
+    back.style.transform =
+        `translateY(${scroll * 0.35}px) scale(1.15)`;
+
+    glow.style.transform =
+        `translateY(${scroll * 0.18}px)`;
 
 });
 
