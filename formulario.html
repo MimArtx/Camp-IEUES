@@ -80,7 +80,6 @@
 </section>
 
 <!-- ================= SCRIPT ================= -->
-
 <script>
 
 function enviarWhats(e){
@@ -100,9 +99,10 @@ if(!nome || !idade || !telefone || !cargo){
   return;
 }
 
-/* ===== LOADING BOTÃO ===== */
+/* ===== BOTÃO ===== */
 
 const btn = document.getElementById("btnEnviar");
+
 btn.innerText = "Enviando...";
 btn.disabled = true;
 
@@ -121,12 +121,13 @@ fetch("https://script.google.com/macros/s/AKfycbyibExcywCC0YlMgvMNFfeyzyfz5cS8fN
   })
 })
 .then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.log(err));
+.then(data => {
 
-/* ===== MENSAGEM WHATSAPP ===== */
+  console.log(data);
 
-const mensagem =
+  /* ===== WHATSAPP ===== */
+
+  const mensagem =
 `📌 INSCRIÇÃO ACAMPADENTRO IEUES
 
 👤 Nome: ${nome}
@@ -136,23 +137,32 @@ const mensagem =
 
 ✅ Presença confirmada!`;
 
-/* ===== ABRE WHATSAPP ===== */
+  window.open(
+  `https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`,
+  '_blank'
+  );
 
-window.open(
-`https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`,
-'_blank'
-);
+  /* ===== RESET ===== */
 
-/* ===== RESET ===== */
+  document.querySelector(".form-box").reset();
 
-btn.innerText = "Confirmar presença";
-btn.disabled = false;
+  btn.innerText = "Confirmar presença";
+  btn.disabled = false;
 
-document.querySelector(".form-box").reset();
+  alert("Inscrição enviada com sucesso!");
+
+})
+.catch(err => {
+
+  console.error(err);
+
+  alert("Erro ao enviar. Tente novamente.");
+
+  btn.innerText = "Confirmar presença";
+  btn.disabled = false;
+
+});
 
 }
 
 </script>
-
-</body>
-</html>
