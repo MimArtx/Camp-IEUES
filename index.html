@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <title>IEUES</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- SWIPER CSS (melhor carregar no head) -->
+  <!-- Swiper CSS -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -18,6 +20,8 @@
 </head>
 
 <body>
+
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
@@ -58,43 +62,44 @@
     <div class="swiper-wrapper">
 
       <div class="swiper-slide">
-        <img src="um.jpg" class="slide-img">
+        <img src="um.jpg" class="slide-img" alt="Oração" loading="lazy">
         <h3>Oração 🙏</h3>
         <p>Tempo separado para buscar a presença de Deus.</p>
       </div>
 
       <div class="swiper-slide">
-        <img src="dois.jpg" class="slide-img">
+        <img src="dois.jpg" class="slide-img" alt="Devocional com Café" loading="lazy">
         <h3>Devocional com Café ☕</h3>
         <p>Palavra e comunhão.</p>
       </div>
 
       <div class="swiper-slide">
-        <img src="tres.jpg" class="slide-img">
+        <img src="tres.jpg" class="slide-img" alt="Sessão Pipoca" loading="lazy">
         <h3>Sessão Pipoca 🍿</h3>
         <p>Filme e reflexão.</p>
       </div>
 
       <div class="swiper-slide">
-        <img src="quatro.jpg" class="slide-img">
+        <img src="quatro.jpg" class="slide-img" alt="Gincana" loading="lazy">
         <h3>Gincana 🎯</h3>
         <p>Desafios em equipe.</p>
       </div>
 
       <div class="swiper-slide">
-        <img src="cinco.jpg" class="slide-img">
+        <img src="cinco.jpg" class="slide-img" alt="Louvor" loading="lazy">
         <h3>Louvor 🎶</h3>
         <p>Adoração ao Senhor.</p>
       </div>
 
       <div class="swiper-slide">
-        <img src="seis.jpg" class="slide-img">
+        <img src="seis.jpg" class="slide-img" alt="Roda de conversa" loading="lazy">
         <h3>Roda de conversa 🗣️</h3>
         <p>Compartilhar e edificar.</p>
       </div>
 
     </div>
 
+    <!-- CONTROLES -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
@@ -102,7 +107,6 @@
   </div>
 
 </section>
-
 
 <!-- ================= O QUE LEVAR ================= -->
 
@@ -112,73 +116,81 @@
 
   <div class="card">
     <p>
-      Bíblia • Roupa confortável • Higiene pessoal • Garrafa d’água • Roupa de cama • Chinelo • Travesseiro 
+      Bíblia • Roupa confortável • Higiene pessoal • Garrafa d’água • Roupa de cama • Chinelo • Travesseiro
     </p>
   </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  © 2026 IEUES — Desenvolvido por Yasmim Henrique 
+  © 2026 IEUES — Desenvolvido por Yasmim Henrique
 </footer>
 
+<!-- ================= SCRIPTS ================= -->
 
-<!-- SWIPER JS -->
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-new Swiper(".mySwiper", {
+/* ================= SWIPER ================= */
 
-  loop:true,
-  centeredSlides:true,
+const swiper = new Swiper(".mySwiper", {
 
-  slidesPerView:1.2,
-  spaceBetween:20,
+  loop: true,
+  centeredSlides: true,
 
-  autoplay:{
-    delay:3500,
-    disableOnInteraction:false,
+  slidesPerView: 1.2,
+  spaceBetween: 20,
+
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true
   },
 
-  pagination:{
-    el:".swiper-pagination",
-    clickable:true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
   },
 
-  navigation:{
-    nextEl:".swiper-button-next",
-    prevEl:".swiper-button-prev",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 
-  breakpoints:{
-    700:{ slidesPerView:2.2 },
-    1024:{ slidesPerView:3 }
+  breakpoints: {
+    700: { slidesPerView: 2.2 },
+    1024: { slidesPerView: 3 }
   }
 
 });
 </script>
 
-
-<!-- ✅ PARALLAX CINEMATOGRÁFICO REAL -->
 <script>
+/* ================= PARALLAX ================= */
 
 const back = document.querySelector(".layer-back");
 const glow = document.querySelector(".layer-glow");
 
 window.addEventListener("scroll", () => {
 
-    const scroll = window.scrollY;
+  const scroll = window.scrollY;
 
+  if(back){
     back.style.transform =
-        `translateY(${scroll * 0.35}px) scale(1.15)`;
+      `translateY(${scroll * 0.35}px) scale(1.15)`;
+  }
 
+  if(glow){
     glow.style.transform =
-        `translateY(${scroll * 0.18}px)`;
+      `translateY(${scroll * 0.18}px)`;
+  }
 
 });
-
 </script>
 
 </body>
 </html>
+
