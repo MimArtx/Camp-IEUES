@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap');
 
+/* =========================
+RESET
+========================= */
+
 *{
 margin:0;
 padding:0;
@@ -7,24 +11,30 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins', sans-serif;
+font-family:'Poppins', Arial, Helvetica, sans-serif;
 color:#fff;
-overflow:hidden;
+overflow-x:hidden;
+background:#050819;
 }
 
-/* HERO FUNDO */
+/* =========================
+HERO FUNDO
+========================= */
 
 .form-hero{
 position:relative;
-height:100vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 
 background:url("fundo.jpg") center/cover no-repeat;
+padding:20px;
 }
 
-/* overlay cinematográfico */
+/* =========================
+OVERLAY CINEMATOGRÁFICO
+========================= */
 
 .overlay{
 position:absolute;
@@ -38,7 +48,9 @@ rgba(5,8,22,.4)
 );
 }
 
-/* container */
+/* =========================
+CONTAINER
+========================= */
 
 .form-container{
 position:relative;
@@ -53,16 +65,19 @@ border-radius:28px;
 /* glass */
 background:rgba(255,255,255,.06);
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
 box-shadow:0 30px 80px rgba(0,0,0,.6);
 
 animation:fadeUp .9s ease;
 }
 
-/* título */
+/* =========================
+TÍTULO
+========================= */
 
 .form-container h1{
-font-family:'Anton';
+font-family:'Anton', Impact, sans-serif;
 letter-spacing:3px;
 font-size:48px;
 margin-bottom:10px;
@@ -71,9 +86,12 @@ margin-bottom:10px;
 .form-container p{
 opacity:.85;
 margin-bottom:30px;
+line-height:1.5;
 }
 
-/* inputs */
+/* =========================
+INPUTS
+========================= */
 
 .form-box input,
 .form-box select{
@@ -84,17 +102,38 @@ margin-bottom:16px;
 
 border-radius:14px;
 border:none;
+outline:none;
 
 background:rgba(255,255,255,.08);
 color:#fff;
 font-size:15px;
+
+transition:.25s;
 }
+
+/* placeholder */
 
 .form-box input::placeholder{
 color:rgba(255,255,255,.65);
 }
 
-/* linha dupla */
+/* focus glow */
+
+.form-box input:focus,
+.form-box select:focus{
+background:rgba(255,255,255,.14);
+box-shadow:0 0 0 2px rgba(255,122,24,.45);
+}
+
+/* select cursor */
+
+.form-box select{
+cursor:pointer;
+}
+
+/* =========================
+LINHA DUPLA
+========================= */
 
 .row{
 display:flex;
@@ -105,7 +144,9 @@ gap:12px;
 flex:1;
 }
 
-/* botão */
+/* =========================
+BOTÃO
+========================= */
 
 .form-box button{
 
@@ -128,12 +169,23 @@ transition:.35s;
 box-shadow:0 20px 45px rgba(255,122,24,.45);
 }
 
+/* hover */
+
 .form-box button:hover{
 transform:translateY(-5px);
 box-shadow:0 30px 70px rgba(255,122,24,.85);
 }
 
-/* animação */
+/* click */
+
+.form-box button:active{
+transform:translateY(-2px);
+box-shadow:0 15px 35px rgba(255,122,24,.6);
+}
+
+/* =========================
+ANIMAÇÃO
+========================= */
 
 @keyframes fadeUp{
 from{
@@ -146,13 +198,19 @@ transform:translateY(0);
 }
 }
 
-/* mobile */
+/* =========================
+RESPONSIVO
+========================= */
 
 @media(max-width:600px){
 
 .form-container{
 margin:20px;
 padding:40px 25px;
+}
+
+.form-container h1{
+font-size:36px;
 }
 
 .row{
