@@ -79,7 +79,6 @@
 
 </section>
 
-<!-- ================= SCRIPT ================= -->
 <script>
 
 function enviarWhats(e){
@@ -92,7 +91,7 @@ const idade = document.getElementById('idade').value.trim();
 const telefone = document.getElementById('telefone').value.trim();
 const cargo = document.getElementById('cargo').value;
 
-/* ===== VALIDAÇÃO EXTRA ===== */
+/* ===== VALIDAÇÃO ===== */
 
 if(!nome || !idade || !telefone || !cargo){
   alert("Preencha todos os campos.");
@@ -102,7 +101,6 @@ if(!nome || !idade || !telefone || !cargo){
 /* ===== BOTÃO ===== */
 
 const btn = document.getElementById("btnEnviar");
-
 btn.innerText = "Enviando...";
 btn.disabled = true;
 
@@ -110,20 +108,19 @@ btn.disabled = true;
 
 fetch("https://script.google.com/macros/s/AKfycbyGRoKSMwZlPMLN00XQ_MCPgpamBg9NYbdIm7dthiEYfYrhydR6IsNwwt43qWJFApdc/exec", {
   method: "POST",
+  mode: "no-cors", // ⭐ ESSENCIAL para Apps Script
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    nome: nome,
-    idade: idade,
-    telefone: telefone,
-    cargo: cargo
+    nome,
+    idade,
+    telefone,
+    cargo
   })
 })
-.then(res => res.json())
-.then(data => {
 
-  console.log(data);
+.then(() => {
 
   /* ===== WHATSAPP ===== */
 
@@ -141,8 +138,6 @@ fetch("https://script.google.com/macros/s/AKfycbyGRoKSMwZlPMLN00XQ_MCPgpamBg9NYb
   `https://wa.me/5512981151894?text=${encodeURIComponent(mensagem)}`,
   '_blank'
   );
-
-  /* ===== RESET ===== */
 
   document.querySelector(".form-box").reset();
 
@@ -166,3 +161,5 @@ fetch("https://script.google.com/macros/s/AKfycbyGRoKSMwZlPMLN00XQ_MCPgpamBg9NYb
 }
 
 </script>
+
+
